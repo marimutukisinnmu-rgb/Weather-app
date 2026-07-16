@@ -1,0 +1,49 @@
+name: Update WBGT
+
+on:
+  schedule:
+    # 毎時00分 (UTC)
+    - cron: "0 * * * *"
+
+  # 手動実行
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create docs folder
+        run: mkdir -p docs
+
+      - name: Download WBGT
+        run: |
+          curl -L \
+            -A "Mozilla/5.0" \
+            "https://www.wbgt.env.go.jp/js/top_tooltip_td.js" \
+            -o docs/top_tooltip_td.js
+
+      - name: Check file
+        run: |
+          ls -lh docs
+          head -20 docs/top_tooltip_td.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/top_tooltip_td.js
+
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "Update WBGT"
+            git push
+          fi
