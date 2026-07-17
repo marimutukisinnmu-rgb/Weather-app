@@ -1,0 +1,101 @@
+/* @charset "utf-8"; */
+
+#wbgt_ranking_select,
+#wbgt_week_select,
+#wbgt_point_select {
+  padding: 1em;
+  margin: 1em auto;
+  border: solid 1px #c9c9c9;
+  border-radius: 4px;
+}
+
+table.ranking {
+  border-collapse: collapse;
+  border: solid 2px #6b6b6b;
+  margin: 2em auto;
+}
+
+table.ranking th {
+  border: solid 1px #6b6b6b;
+  border-bottom-width: 2px;
+  text-align: center;
+  padding: 0;
+}
+
+table.ranking td {
+  border: solid 1px #6b6b6b;
+  padding: 0;
+}
+
+table.ranking td.no { text-align: center; }
+table.ranking td.pp { padding-left: 1em; }
+table.ranking td.ww { border-right: none; text-align: right; padding-right: 1em; }
+
+/* heatillness_week.php */
+table.ranking td.uu { border-left: none; text-align: left; padding-left: 1em; }
+table.ranking td.mm { border-right: none; text-align: right; padding-right: .5em; }
+
+
+/* doc_trendcal.php */
+/* 過去５年間の表 */
+ul.tabyy {
+        text-align: left;
+        list-style: none;
+/*      margin: 0px 0px 0px 135px;*/
+        margin: 0px 0px 0px 65px;
+        line-height: 30px;
+}
+ul.tabyy li {
+        display: inline-block;
+        border-top: 1px solid #aaaaaa;
+        border-left: 1px solid #aaaaaa;
+        border-right: 1px solid #aaaaaa;
+        background: #ececec;
+        margin: 0px 10px 0px 10px;
+        padding: 0px 10px 0px 10px;
+}
+
+ul.tabyy li.selected {
+        background: #ffffff;
+        color: #000000;
+}
+
+
+ul.tabyy li {
+        margin: 0px -5px 0px -5px;
+        padding: 0px 20px 0px 20px;
+}
+
+.rcdiv{
+        border-style:solid;
+        border-width:2px;
+/*      margin: 0px 0px 0px 130px;*/
+        margin: 0px 0px 0px 60px;
+}
+
+table.rcal{
+        font-size:90%;
+        border-collapse: collapse;
+        border: 0px #000000 solid;
+        margin: 0px 0px 0px 0px;
+}
+/*
+table.rcal th{
+        border: 1px #000000 solid;
+        border-top: 2px #000000 solid;
+        text-align: center;
+        padding:0px 0px 0px 0px;
+}
+*/
+table.rcal th{  border:1px #000000 solid; padding:0px 0px 0px 0px; }
+table.rcal th.yy{ width:60px; text-align: center; }
+table.rcal th.mm, th.dd{ width:30px; text-align:center; }
+table.rcal th.data{ width:60px;}
+table.rcal th.selected{ border-left: 2px #ff0000 solid; border-right: 2px #ff0000 solid; }
+
+
+table.rcal td{  border:1px #000000 solid; padding:0px 0px 0px 0px; }
+table.rcal td.yy{ width:60px; text-align: center; }
+table.rcal td.mm, table.rcal td.dd{ width:30px; text-align:center; }
+table.rcal td.data{ width:50px; text-align: right; padding-right:10px; }
+table.rcal td.selected{ border-left: 2px #ff0000 solid; border-right: 2px #ff0000 solid; }

@@ -29,10 +29,15 @@ jobs:
             "https://www.wbgt.env.go.jp/js/top_tooltip_td.js" \
             -o docs/top_tooltip_td.js
 
+      - name: Append update timestamp
+        run: |
+          echo "" >> docs/top_tooltip_td.js
+          echo "// Updated by GitHub Actions: $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S JST')" >> docs/top_tooltip_td.js
+
       - name: Check file
         run: |
           ls -lh docs
-          head -20 docs/top_tooltip_td.js
+          tail -5 docs/top_tooltip_td.js
 
       - name: Commit if changed
         run: |
@@ -47,3 +52,9 @@ jobs:
             git commit -m "Update WBGT"
             git push
           fi
+
+# 最後に更新日時をコメントとして追記する理由
+# ダウンロード前に日時を書くと、取得開始時刻になってしまう。
+# ダウンロード完了後に追記することで、
+# 「公開される top_tooltip_td.js が完成した時刻」を記録できる。
+# JavaScriptのコメントなので動作には影響しない。

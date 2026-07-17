@@ -1,0 +1,1481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0040)https://www.wbgt.env.go.jp/wbgt_data.php -->
+<html lang="ja-JP"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>環境省熱中症予防情報サイト 暑さ指数</title>
+<link rel="stylesheet" type="text/css" href="./環境省熱中症予防情報サイト 暑さ指数_files/style.css">
+<link rel="stylesheet" type="text/css" href="./環境省熱中症予防情報サイト 暑さ指数_files/style_asc.css">
+<link rel="stylesheet" type="text/css" href="./環境省熱中症予防情報サイト 暑さ指数_files/color_theme.css">
+<link rel="stylesheet" type="text/css" href="./環境省熱中症予防情報サイト 暑さ指数_files/ranking.css">
+<link rel="stylesheet" type="text/css" href="./環境省熱中症予防情報サイト 暑さ指数_files/dailymax.css">
+<script type="text/javascript" src="./環境省熱中症予防情報サイト 暑さ指数_files/submit.js.ダウンロード"></script>
+<script type="text/javascript" src="./環境省熱中症予防情報サイト 暑さ指数_files/point.js.ダウンロード"></script>
+<script type="text/javascript" src="./環境省熱中症予防情報サイト 暑さ指数_files/select.js.ダウンロード"></script>
+<script type="text/javascript" src="./環境省熱中症予防情報サイト 暑さ指数_files/dailymax.js.ダウンロード"></script>
+<script src="./環境省熱中症予防情報サイト 暑さ指数_files/jquery-3.7.1.min.js.ダウンロード" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- <script type="text/javascript" src="/lib/jquery-1.8.3.min.js"></script> -->
+<script type="text/javascript">
+<!--
+// URLのパラメータを取得
+var urlParam = location.search;
+// URLにパラメータが存在しない場合
+if (!urlParam) {
+	if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+		myRet = confirm("スマートフォン版サイトを表示しますか？");
+		if ( myRet == true ){
+			location.href = "sp" + location.pathname;
+		}
+	}
+}
+//-->
+</script>
+</head>
+<body onload="initSelection(&#39;&#39;,&#39;&#39;,&#39;&#39;);">
+
+	<!--ヘッダー部分-->
+	
+<!-- ヘッダー -->
+<div id="hwrapper">
+
+	<!-- 言語選択・デバイス選択 -->
+	<div class="hcontent lang_menu">
+		<div class="langselect">
+			<img class="lmenu_icon" src="./環境省熱中症予防情報サイト 暑さ指数_files/icon_lang.png" alt="言語選択">
+			<span class="lmenu"><a href="https://www.wbgt.env.go.jp/en/">English</a></span>
+			<span class="lmenu"><a href="https://www.wbgt.env.go.jp/zh-cn/">中文簡体</a></span>
+			<span class="lmenu"><a href="https://www.wbgt.env.go.jp/zh-tw/">中文繁体</a></span>
+			<span class="lmenu"><a href="https://www.wbgt.env.go.jp/ko/">한국어</a></span>
+			<a href="https://www.wbgt.env.go.jp/sp/"><img class="lmenu_icon" src="./環境省熱中症予防情報サイト 暑さ指数_files/icon_mobile.png" alt="モバイル版"></a>
+			<a href="https://www.env.go.jp/" title="環境省へ" accesskey="A"><img class="lmenu_icon" src="./環境省熱中症予防情報サイト 暑さ指数_files/logo_90x30.png" alt="環境省"></a>
+		</div>
+	</div>
+
+	<!-- サイトタイトル -->
+	<div class="header_title">
+		<div class="hcontent site_title">
+			<h1>
+				<a href="https://www.wbgt.env.go.jp/" title="熱中症予防情報サイトのホームへ" accesskey="B"><img class="top_title_site" src="./環境省熱中症予防情報サイト 暑さ指数_files/top_title_site.png" alt="熱中症予防情報サイト"></a>
+			</h1>
+		</div>
+	</div>
+
+	<!-- メインメニュー -->
+	<div class="hcontent main_menu">
+		<a href="https://www.wbgt.env.go.jp/" id="topmenu0" class="home"><span>ホーム</span></a>
+		<a href="https://www.wbgt.env.go.jp/wbgt_data.php" id="topmenu1" class="selected"><span>全国の暑さ指数</span></a>
+		<a href="https://www.wbgt.env.go.jp/alert.php" id="topmenu2"><span>熱中症特別警戒情報<br>熱中症警戒情報</span></a>
+		<a href="https://www.wbgt.env.go.jp/wbgt.php" id="topmenu3"><span>暑さ指数について</span></a>
+		<a href="https://www.wbgt.env.go.jp/heatillness.php" id="topmenu4" class="other"><span>熱中症対策</span></a>
+		<a href="https://www.wbgt.env.go.jp/heatillness_pr.php" id="topmenu5" class="other"><span>普及啓発資料</span></a>
+		<a href="https://www.wbgt.env.go.jp/heatillness_rma_ap.php" id="topmenu6"><span>関係府省庁の取組</span></a>
+		<a href="https://www.wbgt.env.go.jp/private_sector.php" id="topmenu7"><span>民間事業者との取組</span></a>
+ 	</div>
+
+	<!-- JavaScriptメッセージ -->
+	<script type="text/javascript" language="JavaScript">
+	</script>
+	<noscript>
+		<div id="js_note">
+			現在、JavaScriptが無効に設定されています。<br>
+			本サイトは、一部の表示でJavaScriptを利用しています。<br>
+			すべての機能を利用するには、JavaScriptを有効に設定して閲覧してください。<br>
+			JavaScriptを使用しない場合は、<a href="/kt/" class="java_msg">携帯版表示</a>へお進みください。
+		</div>
+	</noscript>
+
+			<!-- パンくずリスト -->
+		<div class="hcontent area_topic-path">
+			<ol class="topic-path">
+																																																<li class="first"><a href="https://www.wbgt.env.go.jp/">ホーム</a>&nbsp; ▶</li>
+																										<li><a href="https://www.wbgt.env.go.jp/wbgt_data.php">全国の暑さ指数</a>　＞</li>
+																				<li>暑さ指数の実況と予測</li>
+												</ol>
+		</div> <!-- end of area_topic-path -->
+	
+	<!-- 熱中症警戒アラート1行情報 -->
+						<div class="alert_telop alert_telop_padding">
+				<p>
+					<span class="alert_k">熱中症警戒アラート</span> を発表しました
+					<a href="https://www.wbgt.env.go.jp/alert.php">[地図を表示]</a>
+				</p>
+			</div>
+			
+</div><!-- end of hwrapper -->
+	
+	<!-- メインコンテンツ -->
+	<div id="maincontent">
+	<!-- ページタイトル -->
+	<h2>全国の暑さ指数(WBGT)</h2>
+
+	<!-- サブメニュー -->
+					<div class="panel_container">
+			<div class="item24 selected" onclick="javascript:window.open(&#39;/wbgt_data.php&#39;, &#39;_self&#39;);" onkeypress=""><p class="name">暑さ指数の実況と予測<span class="desc">地図表示・グラフや日表</span></p></div>
+			<div class="item24" onclick="javascript:window.open(&#39;/mail_service.php&#39;, &#39;_self&#39;);" onkeypress=""><p class="name">暑さ指数メール配信サービス<span class="desc">個人向けのメール通知</span></p></div>
+			<div class="item24" onclick="javascript:window.open(&#39;/data_service.php&#39;, &#39;_self&#39;);" onkeypress=""><p class="name">暑さ指数電子情報提供サービス<span class="desc">事業者向けのCSVファイル提供</span></p></div>
+			<div class="item24" onclick="javascript:window.open(&#39;/heatillness_report.php&#39;, &#39;_self&#39;);" onkeypress=""><p class="name">暑さ指数と熱中症救急搬送人員速報<span class="desc">毎週木曜更新</span></p></div>
+			<div class="item24" onclick="javascript:window.open(&#39;/doc_trendcal.php&#39;, &#39;_self&#39;);" onkeypress=""><p class="name">熱中症リスクカレンダー<span class="desc">過去5年間の日別暑さ指数一覧表</span></p></div>
+			<div class="item24" onclick="javascript:window.open(&#39;/wbgt_data_download.php&#39;, &#39;_self&#39;);" onkeypress=""><p class="name">暑さ指数の実況値・予測値ダウンロード<span class="desc"></span></p></div>
+		</div>
+
+	<h3>暑さ指数(WBGT)の実況と予測</h3>
+	<h4>暑さ指数(WBGT)地図表示</h4>
+
+
+	<div id="wbgt_map">
+
+		<div id="wbgt_point_select" style="display:flex;justify-content:space-between;" class="w90">
+			<p>&nbsp;</p><!-- dummy -->
+			<p>地点を選択			
+				<select name="region" id="region" title="地方" onchange="selectRegion(this);"><option value="">地方</option><option value="01">北海道地方</option><option value="02">東北地方</option><option value="03">関東地方</option><option value="04">甲信地方</option><option value="05">東海地方</option><option value="06">北陸地方</option><option value="07">近畿地方</option><option value="08">中国地方</option><option value="09">四国地方</option><option value="10">九州地方</option><option value="11">沖縄地方</option></select>
+				<select name="prefecture" id="prefecture" title="都道府県" onchange="selectPrefecture(this);"><option value="">都府県</option></select>
+				<select name="point" id="point" title="地点" onchange="submitGraph(&#39;graph_td.php&#39;,&#39;&#39;);"><option value="">地点</option></select>
+			</p>
+			<p>&nbsp;</p><!-- dummy -->
+		</div> <!-- end of wbgt_point_select -->
+
+<!-- アラート発表状況 -->
+<!-- debug
+array(58) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(12) "宗谷地方"
+    [1]=>
+    string(2) "11"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "011000"
+    [4]=>
+    string(9) "北海道"
+    [5]=>
+    string(2) "01"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(21) "上川・留萌地方"
+    [1]=>
+    string(2) "12"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "012000"
+    [4]=>
+    string(9) "北海道"
+    [5]=>
+    string(2) "01"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(30) "石狩・空知・後志地方"
+    [1]=>
+    string(2) "14"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "016000"
+    [4]=>
+    string(9) "北海道"
+    [5]=>
+    string(2) "01"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(30) "網走・北見・紋別地方"
+    [1]=>
+    string(2) "17"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "013000"
+    [4]=>
+    string(9) "北海道"
+    [5]=>
+    string(2) "01"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(21) "釧路・根室地方"
+    [1]=>
+    string(2) "18"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "014100"
+    [4]=>
+    string(9) "北海道"
+    [5]=>
+    string(2) "01"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [5]=>
+  array(8) {
+    [0]=>
+    string(12) "十勝地方"
+    [1]=>
+    string(2) "20"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "014030"
+    [4]=>
+    string(9) "北海道"
+    [5]=>
+    string(2) "01"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [6]=>
+  array(8) {
+    [0]=>
+    string(21) "胆振・日高地方"
+    [1]=>
+    string(2) "21"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "015000"
+    [4]=>
+    string(9) "北海道"
+    [5]=>
+    string(2) "01"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [7]=>
+  array(8) {
+    [0]=>
+    string(21) "渡島・檜山地方"
+    [1]=>
+    string(2) "23"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "017000"
+    [4]=>
+    string(9) "北海道"
+    [5]=>
+    string(2) "01"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [8]=>
+  array(8) {
+    [0]=>
+    string(9) "青森県"
+    [1]=>
+    string(2) "31"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "020000"
+    [4]=>
+    string(6) "青森"
+    [5]=>
+    string(2) "02"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [9]=>
+  array(8) {
+    [0]=>
+    string(9) "秋田県"
+    [1]=>
+    string(2) "32"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "050000"
+    [4]=>
+    string(6) "秋田"
+    [5]=>
+    string(2) "05"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [10]=>
+  array(8) {
+    [0]=>
+    string(9) "岩手県"
+    [1]=>
+    string(2) "33"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "030000"
+    [4]=>
+    string(6) "岩手"
+    [5]=>
+    string(2) "03"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [11]=>
+  array(8) {
+    [0]=>
+    string(9) "宮城県"
+    [1]=>
+    string(2) "34"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "040000"
+    [4]=>
+    string(6) "宮城"
+    [5]=>
+    string(2) "04"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [12]=>
+  array(8) {
+    [0]=>
+    string(9) "山形県"
+    [1]=>
+    string(2) "35"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "060000"
+    [4]=>
+    string(6) "山形"
+    [5]=>
+    string(2) "06"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [13]=>
+  array(8) {
+    [0]=>
+    string(9) "福島県"
+    [1]=>
+    string(2) "36"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "070000"
+    [4]=>
+    string(6) "福島"
+    [5]=>
+    string(2) "07"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [14]=>
+  array(8) {
+    [0]=>
+    string(9) "茨城県"
+    [1]=>
+    string(2) "40"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "080000"
+    [4]=>
+    string(6) "茨城"
+    [5]=>
+    string(2) "08"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "1"
+  }
+  [15]=>
+  array(8) {
+    [0]=>
+    string(9) "栃木県"
+    [1]=>
+    string(2) "41"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "090000"
+    [4]=>
+    string(6) "栃木"
+    [5]=>
+    string(2) "09"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [16]=>
+  array(8) {
+    [0]=>
+    string(9) "群馬県"
+    [1]=>
+    string(2) "42"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "100000"
+    [4]=>
+    string(6) "群馬"
+    [5]=>
+    string(2) "10"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "1"
+  }
+  [17]=>
+  array(8) {
+    [0]=>
+    string(9) "埼玉県"
+    [1]=>
+    string(2) "43"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "110000"
+    [4]=>
+    string(6) "埼玉"
+    [5]=>
+    string(2) "11"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "1"
+  }
+  [18]=>
+  array(8) {
+    [0]=>
+    string(9) "東京都"
+    [1]=>
+    string(2) "44"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "130000"
+    [4]=>
+    string(6) "東京"
+    [5]=>
+    string(2) "13"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "1"
+  }
+  [19]=>
+  array(8) {
+    [0]=>
+    string(9) "千葉県"
+    [1]=>
+    string(2) "45"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "120000"
+    [4]=>
+    string(6) "千葉"
+    [5]=>
+    string(2) "12"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "1"
+  }
+  [20]=>
+  array(8) {
+    [0]=>
+    string(12) "神奈川県"
+    [1]=>
+    string(2) "46"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "140000"
+    [4]=>
+    string(9) "神奈川"
+    [5]=>
+    string(2) "14"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "1"
+  }
+  [21]=>
+  array(8) {
+    [0]=>
+    string(9) "長野県"
+    [1]=>
+    string(2) "48"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "200000"
+    [4]=>
+    string(6) "長野"
+    [5]=>
+    string(2) "20"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "1"
+  }
+  [22]=>
+  array(8) {
+    [0]=>
+    string(9) "山梨県"
+    [1]=>
+    string(2) "49"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "190000"
+    [4]=>
+    string(6) "山梨"
+    [5]=>
+    string(2) "19"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "1"
+  }
+  [23]=>
+  array(8) {
+    [0]=>
+    string(9) "静岡県"
+    [1]=>
+    string(2) "50"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "220000"
+    [4]=>
+    string(6) "静岡"
+    [5]=>
+    string(2) "22"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [24]=>
+  array(8) {
+    [0]=>
+    string(9) "愛知県"
+    [1]=>
+    string(2) "51"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "230000"
+    [4]=>
+    string(6) "愛知"
+    [5]=>
+    string(2) "23"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "1"
+  }
+  [25]=>
+  array(8) {
+    [0]=>
+    string(9) "岐阜県"
+    [1]=>
+    string(2) "52"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "210000"
+    [4]=>
+    string(6) "岐阜"
+    [5]=>
+    string(2) "21"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [26]=>
+  array(8) {
+    [0]=>
+    string(9) "三重県"
+    [1]=>
+    string(2) "53"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "240000"
+    [4]=>
+    string(6) "三重"
+    [5]=>
+    string(2) "24"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "1"
+  }
+  [27]=>
+  array(8) {
+    [0]=>
+    string(9) "新潟県"
+    [1]=>
+    string(2) "54"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "150000"
+    [4]=>
+    string(6) "新潟"
+    [5]=>
+    string(2) "15"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "1"
+  }
+  [28]=>
+  array(8) {
+    [0]=>
+    string(9) "富山県"
+    [1]=>
+    string(2) "55"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "160000"
+    [4]=>
+    string(6) "富山"
+    [5]=>
+    string(2) "16"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "1"
+  }
+  [29]=>
+  array(8) {
+    [0]=>
+    string(9) "石川県"
+    [1]=>
+    string(2) "56"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "170000"
+    [4]=>
+    string(6) "石川"
+    [5]=>
+    string(2) "17"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "1"
+  }
+  [30]=>
+  array(8) {
+    [0]=>
+    string(9) "福井県"
+    [1]=>
+    string(2) "57"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "180000"
+    [4]=>
+    string(6) "福井"
+    [5]=>
+    string(2) "18"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [31]=>
+  array(8) {
+    [0]=>
+    string(9) "滋賀県"
+    [1]=>
+    string(2) "60"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "250000"
+    [4]=>
+    string(6) "滋賀"
+    [5]=>
+    string(2) "25"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [32]=>
+  array(8) {
+    [0]=>
+    string(9) "京都府"
+    [1]=>
+    string(2) "61"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "260000"
+    [4]=>
+    string(6) "京都"
+    [5]=>
+    string(2) "26"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [33]=>
+  array(8) {
+    [0]=>
+    string(9) "大阪府"
+    [1]=>
+    string(2) "62"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "270000"
+    [4]=>
+    string(6) "大阪"
+    [5]=>
+    string(2) "27"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [34]=>
+  array(8) {
+    [0]=>
+    string(9) "兵庫県"
+    [1]=>
+    string(2) "63"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "280000"
+    [4]=>
+    string(6) "兵庫"
+    [5]=>
+    string(2) "28"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "0"
+  }
+  [35]=>
+  array(8) {
+    [0]=>
+    string(9) "奈良県"
+    [1]=>
+    string(2) "64"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "290000"
+    [4]=>
+    string(6) "奈良"
+    [5]=>
+    string(2) "29"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [36]=>
+  array(8) {
+    [0]=>
+    string(12) "和歌山県"
+    [1]=>
+    string(2) "65"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "300000"
+    [4]=>
+    string(9) "和歌山"
+    [5]=>
+    string(2) "30"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "1"
+  }
+  [37]=>
+  array(8) {
+    [0]=>
+    string(9) "岡山県"
+    [1]=>
+    string(2) "66"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "330000"
+    [4]=>
+    string(6) "岡山"
+    [5]=>
+    string(2) "33"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [38]=>
+  array(8) {
+    [0]=>
+    string(9) "広島県"
+    [1]=>
+    string(2) "67"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "340000"
+    [4]=>
+    string(6) "広島"
+    [5]=>
+    string(2) "34"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "0"
+  }
+  [39]=>
+  array(8) {
+    [0]=>
+    string(9) "島根県"
+    [1]=>
+    string(2) "68"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "320000"
+    [4]=>
+    string(6) "島根"
+    [5]=>
+    string(2) "32"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [40]=>
+  array(8) {
+    [0]=>
+    string(9) "鳥取県"
+    [1]=>
+    string(2) "69"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "310000"
+    [4]=>
+    string(6) "鳥取"
+    [5]=>
+    string(2) "31"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [41]=>
+  array(8) {
+    [0]=>
+    string(9) "徳島県"
+    [1]=>
+    string(2) "71"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "360000"
+    [4]=>
+    string(6) "徳島"
+    [5]=>
+    string(2) "36"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "1"
+  }
+  [42]=>
+  array(8) {
+    [0]=>
+    string(9) "香川県"
+    [1]=>
+    string(2) "72"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "370000"
+    [4]=>
+    string(6) "香川"
+    [5]=>
+    string(2) "37"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "0"
+  }
+  [43]=>
+  array(8) {
+    [0]=>
+    string(9) "愛媛県"
+    [1]=>
+    string(2) "73"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "380000"
+    [4]=>
+    string(6) "愛媛"
+    [5]=>
+    string(2) "38"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "1"
+  }
+  [44]=>
+  array(8) {
+    [0]=>
+    string(9) "高知県"
+    [1]=>
+    string(2) "74"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "390000"
+    [4]=>
+    string(6) "高知"
+    [5]=>
+    string(2) "39"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "0"
+  }
+  [45]=>
+  array(8) {
+    [0]=>
+    string(9) "山口県"
+    [1]=>
+    string(2) "81"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "350000"
+    [4]=>
+    string(6) "山口"
+    [5]=>
+    string(2) "35"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "0"
+  }
+  [46]=>
+  array(8) {
+    [0]=>
+    string(9) "福岡県"
+    [1]=>
+    string(2) "82"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "400000"
+    [4]=>
+    string(6) "福岡"
+    [5]=>
+    string(2) "40"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "0"
+  }
+  [47]=>
+  array(8) {
+    [0]=>
+    string(9) "大分県"
+    [1]=>
+    string(2) "83"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "440000"
+    [4]=>
+    string(6) "大分"
+    [5]=>
+    string(2) "44"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "0"
+  }
+  [48]=>
+  array(8) {
+    [0]=>
+    string(9) "長崎県"
+    [1]=>
+    string(2) "84"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "420000"
+    [4]=>
+    string(6) "長崎"
+    [5]=>
+    string(2) "42"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "1"
+  }
+  [49]=>
+  array(8) {
+    [0]=>
+    string(9) "佐賀県"
+    [1]=>
+    string(2) "85"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "410000"
+    [4]=>
+    string(6) "佐賀"
+    [5]=>
+    string(2) "41"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [50]=>
+  array(8) {
+    [0]=>
+    string(9) "熊本県"
+    [1]=>
+    string(2) "86"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "430000"
+    [4]=>
+    string(6) "熊本"
+    [5]=>
+    string(2) "43"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "0"
+  }
+  [51]=>
+  array(8) {
+    [0]=>
+    string(9) "宮崎県"
+    [1]=>
+    string(2) "87"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "450000"
+    [4]=>
+    string(6) "宮崎"
+    [5]=>
+    string(2) "45"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "1"
+  }
+  [52]=>
+  array(8) {
+    [0]=>
+    string(36) "鹿児島県（奄美地方除く）"
+    [1]=>
+    string(2) "88"
+    [2]=>
+    string(1) "1"
+    [3]=>
+    string(6) "460100"
+    [4]=>
+    string(9) "鹿児島"
+    [5]=>
+    string(2) "46"
+    [6]=>
+    string(1) "1"
+    [7]=>
+    string(1) "1"
+  }
+  [53]=>
+  array(8) {
+    [0]=>
+    string(12) "奄美地方"
+    [1]=>
+    string(2) "88"
+    [2]=>
+    string(1) "2"
+    [3]=>
+    string(6) "460040"
+    [4]=>
+    string(9) "鹿児島"
+    [5]=>
+    string(2) "46"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [54]=>
+  array(8) {
+    [0]=>
+    string(18) "沖縄本島地方"
+    [1]=>
+    string(2) "91"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "471000"
+    [4]=>
+    string(6) "沖縄"
+    [5]=>
+    string(2) "47"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [55]=>
+  array(8) {
+    [0]=>
+    string(15) "大東島地方"
+    [1]=>
+    string(2) "92"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "472000"
+    [4]=>
+    string(6) "沖縄"
+    [5]=>
+    string(2) "47"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [56]=>
+  array(8) {
+    [0]=>
+    string(15) "宮古島地方"
+    [1]=>
+    string(2) "93"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "473000"
+    [4]=>
+    string(6) "沖縄"
+    [5]=>
+    string(2) "47"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+  [57]=>
+  array(8) {
+    [0]=>
+    string(15) "八重山地方"
+    [1]=>
+    string(2) "94"
+    [2]=>
+    string(1) "0"
+    [3]=>
+    string(6) "474000"
+    [4]=>
+    string(6) "沖縄"
+    [5]=>
+    string(2) "47"
+    [6]=>
+    string(1) "0"
+    [7]=>
+    string(1) "0"
+  }
+}
+-->
+	<!-- 熱中症警戒アラート発表なし -->
+<!-- end of アラート発表状況 -->
+
+<!-- iframe url を生成 -->
+
+		<div class="daily_tabs">
+			<a class="tab active" href="https://www.wbgt.env.go.jp/wbgt_data.php#" onclick="switchTab(this, &#39;/dataareamap.php?&#39;, &#39;wbgt_monitor1&#39;); return false;">実況と3時間毎の予測</a>
+			<a class="tab " href="https://www.wbgt.env.go.jp/wbgt_data.php#" onclick="switchTab(this, &#39;/dataareamap2.php?&#39;, &#39;wbgt_monitor2&#39;); return false;">日最高暑さ指数予測値</a>
+		</div>
+
+		<div style="position:relative">
+			<iframe id="wbgt_map_frame" src="./環境省熱中症予防情報サイト 暑さ指数_files/dataareamap.html" style="width: 800px; height: 840px; margin: 0 auto; padding: 0;" title="暑さ指数地図" name="sample" frameborder="0" scrolling="no">暑さ指数地図</iframe>
+
+
+		</div> <!-- end of iframe -->
+
+
+		<table class="wbgt_map_legend" onclick="javascript:window.open(&#39;/wbgt.php#guideline&#39;, &#39;_blank&#39;);" onkeypress="" style="cursor:pointer;cursor:hand" title="凡例" summary="凡例">
+			<tbody><tr>
+				<th class="wbgt_lv1">(青) ほぼ安全</th>
+				<th class="wbgt_lv2">(水色) 注意</th>
+				<th class="wbgt_lv3">(黄) 警戒</th>
+				<th class="wbgt_lv4">(橙) 厳重警戒</th>
+				<th class="wbgt_lv5">(赤) 危険</th>
+			</tr>
+			<tr>
+				<td>21未満<br>適時水分補給</td>
+				<td>21以上25未満<br>積極的に水分補給</td>
+				<td>25以上28未満<br>積極的に休息</td>
+				<td>28以上31未満<br>激しい運動は中止</td>
+				<td>31以上<br>運動は原則中止</td>
+			</tr>
+		</tbody></table>
+	</div>
+
+
+	<div id="wbgt_monitor1" class="content active">
+		<h4>全国47か所の暑さ指数(WBGT)実測値</h4>
+		<div id="wbgt_monitor">
+			<div class="wbgt_monitor_container">
+				<div id="wbgt_monitor_datetime">7月14日21時現在</div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;01&#39;, &#39;14&#39;, &#39;14163&#39;)" onkeypress="" title="札幌"><div class="name">札幌</div><div class="value wbgt_lv2">22.8</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;02&#39;, &#39;31&#39;, &#39;31312&#39;)" onkeypress="" title="青森"><div class="name">青森</div><div class="value wbgt_lv2">24.5</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;02&#39;, &#39;32&#39;, &#39;32402&#39;)" onkeypress="" title="秋田"><div class="name">秋田</div><div class="value wbgt_lv2">24.7</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;02&#39;, &#39;33&#39;, &#39;33431&#39;)" onkeypress="" title="盛岡"><div class="name">盛岡</div><div class="value wbgt_lv2">23.9</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;02&#39;, &#39;34&#39;, &#39;34392&#39;)" onkeypress="" title="仙台"><div class="name">仙台</div><div class="value wbgt_lv2">23.8</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;02&#39;, &#39;35&#39;, &#39;35426&#39;)" onkeypress="" title="山形"><div class="name">山形</div><div class="value wbgt_lv2">24.5</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;02&#39;, &#39;36&#39;, &#39;36127&#39;)" onkeypress="" title="福島"><div class="name">福島</div><div class="value wbgt_lv3">25.4</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;03&#39;, &#39;40&#39;, &#39;40201&#39;)" onkeypress="" title="水戸"><div class="name">水戸</div><div class="value wbgt_lv2">24.7</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;03&#39;, &#39;41&#39;, &#39;41277&#39;)" onkeypress="" title="宇都宮"><div class="name">宇都宮</div><div class="value wbgt_lv3">25.8</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;03&#39;, &#39;42&#39;, &#39;42251&#39;)" onkeypress="" title="前橋"><div class="name">前橋</div><div class="value wbgt_lv3">25.7</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;03&#39;, &#39;43&#39;, &#39;43056&#39;)" onkeypress="" title="熊谷"><div class="name">熊谷</div><div class="value wbgt_lv3">25.3</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;03&#39;, &#39;44&#39;, &#39;44132&#39;)" onkeypress="" title="東京"><div class="name">東京</div><div class="value wbgt_lv3">25.9</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;03&#39;, &#39;45&#39;, &#39;45148&#39;)" onkeypress="" title="銚子"><div class="name">銚子</div><div class="value wbgt_lv3">25.0</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;03&#39;, &#39;46&#39;, &#39;46106&#39;)" onkeypress="" title="横浜"><div class="name">横浜</div><div class="value wbgt_lv3">26.0</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;04&#39;, &#39;48&#39;, &#39;48156&#39;)" onkeypress="" title="長野"><div class="name">長野</div><div class="value wbgt_lv2">24.0</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;04&#39;, &#39;49&#39;, &#39;49142&#39;)" onkeypress="" title="甲府"><div class="name">甲府</div><div class="value wbgt_lv2">24.4</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;05&#39;, &#39;50&#39;, &#39;50331&#39;)" onkeypress="" title="静岡"><div class="name">静岡</div><div class="value wbgt_lv3">25.7</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;05&#39;, &#39;51&#39;, &#39;51106&#39;)" onkeypress="" title="名古屋"><div class="name">名古屋</div><div class="value wbgt_lv3">25.6</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;05&#39;, &#39;52&#39;, &#39;52586&#39;)" onkeypress="" title="岐阜"><div class="name">岐阜</div><div class="value wbgt_lv2">24.8</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;05&#39;, &#39;53&#39;, &#39;53133&#39;)" onkeypress="" title="津"><div class="name">津</div><div class="value wbgt_lv3">25.9</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;06&#39;, &#39;54&#39;, &#39;54232&#39;)" onkeypress="" title="新潟"><div class="name">新潟</div><div class="value wbgt_lv3">25.4</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;06&#39;, &#39;55&#39;, &#39;55102&#39;)" onkeypress="" title="富山"><div class="name">富山</div><div class="value wbgt_lv2">24.9</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;06&#39;, &#39;56&#39;, &#39;56227&#39;)" onkeypress="" title="金沢"><div class="name">金沢</div><div class="value wbgt_lv3">25.4</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;06&#39;, &#39;57&#39;, &#39;57066&#39;)" onkeypress="" title="福井"><div class="name">福井</div><div class="value wbgt_lv3">25.4</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;07&#39;, &#39;60&#39;, &#39;60131&#39;)" onkeypress="" title="彦根"><div class="name">彦根</div><div class="value wbgt_lv3">25.8</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;07&#39;, &#39;61&#39;, &#39;61286&#39;)" onkeypress="" title="京都"><div class="name">京都</div><div class="value wbgt_lv3">26.0</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;07&#39;, &#39;62&#39;, &#39;62078&#39;)" onkeypress="" title="大阪"><div class="name">大阪</div><div class="value wbgt_lv3">26.6</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;07&#39;, &#39;63&#39;, &#39;63518&#39;)" onkeypress="" title="神戸"><div class="name">神戸</div><div class="value wbgt_lv3">26.5</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;07&#39;, &#39;64&#39;, &#39;64036&#39;)" onkeypress="" title="奈良"><div class="name">奈良</div><div class="value wbgt_lv3">25.2</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;07&#39;, &#39;65&#39;, &#39;65042&#39;)" onkeypress="" title="和歌山"><div class="name">和歌山</div><div class="value wbgt_lv3">26.3</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;08&#39;, &#39;66&#39;, &#39;66408&#39;)" onkeypress="" title="岡山"><div class="name">岡山</div><div class="value wbgt_lv3">27.0</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;08&#39;, &#39;67&#39;, &#39;67437&#39;)" onkeypress="" title="広島"><div class="name">広島</div><div class="value wbgt_lv3">25.5</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;08&#39;, &#39;68&#39;, &#39;68132&#39;)" onkeypress="" title="松江"><div class="name">松江</div><div class="value wbgt_lv3">25.3</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;08&#39;, &#39;69&#39;, &#39;69122&#39;)" onkeypress="" title="鳥取"><div class="name">鳥取</div><div class="value wbgt_lv3">25.9</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;08&#39;, &#39;81&#39;, &#39;81428&#39;)" onkeypress="" title="下関"><div class="name">下関</div><div class="value wbgt_lv3">26.2</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;09&#39;, &#39;71&#39;, &#39;71106&#39;)" onkeypress="" title="徳島"><div class="name">徳島</div><div class="value wbgt_lv3">27.8</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;09&#39;, &#39;72&#39;, &#39;72086&#39;)" onkeypress="" title="高松"><div class="name">高松</div><div class="value wbgt_lv3">26.2</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;09&#39;, &#39;73&#39;, &#39;73166&#39;)" onkeypress="" title="松山"><div class="name">松山</div><div class="value wbgt_lv3">26.1</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;09&#39;, &#39;74&#39;, &#39;74182&#39;)" onkeypress="" title="高知"><div class="name">高知</div><div class="value wbgt_lv3">26.9</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;10&#39;, &#39;82&#39;, &#39;82182&#39;)" onkeypress="" title="福岡"><div class="name">福岡</div><div class="value wbgt_lv3">26.7</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;10&#39;, &#39;83&#39;, &#39;83216&#39;)" onkeypress="" title="大分"><div class="name">大分</div><div class="value wbgt_lv3">26.0</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;10&#39;, &#39;84&#39;, &#39;84496&#39;)" onkeypress="" title="長崎"><div class="name">長崎</div><div class="value wbgt_lv3">26.0</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;10&#39;, &#39;85&#39;, &#39;85142&#39;)" onkeypress="" title="佐賀"><div class="name">佐賀</div><div class="value wbgt_lv3">26.8</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;10&#39;, &#39;86&#39;, &#39;86141&#39;)" onkeypress="" title="熊本"><div class="name">熊本</div><div class="value wbgt_lv3">25.7</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;10&#39;, &#39;87&#39;, &#39;87376&#39;)" onkeypress="" title="宮崎"><div class="name">宮崎</div><div class="value wbgt_lv3">25.7</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;10&#39;, &#39;88&#39;, &#39;88317&#39;)" onkeypress="" title="鹿児島"><div class="name">鹿児島</div><div class="value wbgt_lv3">26.6</div></div>
+				<div class="wbgt_monitor_site" onclick="javascript:submitMapGraph(&#39;graph_ref_td.php&#39;, &#39;11&#39;, &#39;9194&#39;, &#39;91197&#39;)" onkeypress="" title="那覇"><div class="name">那覇</div><div class="value wbgt_lv3">25.3</div></div>
+			</div>
+		</div>
+	</div>
+	<div id="wbgt_monitor2" class="content ">
+		<h4>日最高暑さ指数(WBGT)と3時間毎の予測値</h4>
+		<div id="wbgt_monitor">
+<table class="daily_max_table">	<tbody><tr class="day">
+		<th class="point" rowspan="3"></th><th colspan="3">日最高暑さ指数</th><th colspan="17">暑さ指数予測値の時系列</th></tr>
+	<tr class="day">
+		<!-- <th class="point"></th> --><th rowspan="2">7/14</th><th rowspan="2">7/15</th><th rowspan="2">7/16</th><th colspan="1">7/14</th><th colspan="8">7/15</th><th colspan="8">7/16</th></tr>
+	<tr class="day">
+		<!-- <th class="point"></th> --><th>24</th><th>03</th><th>06</th><th>09</th><th>12</th><th>15</th><th>18</th><th>21</th><th>24</th><th>03</th><th>06</th><th>09</th><th>12</th><th>15</th><th>18</th><th>21</th><th>24</th></tr>
+<tr class="day"><th class="point">札幌</th><td class="wbgt_lv3">26</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">28</td><td class="wbgt_lv2">23</td><td class="wbgt_lv2">23</td><td class="wbgt_lv2">23</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">28</td><td class="wbgt_lv2">24</td><td class="wbgt_lv2">23</td><td class="wbgt_lv2">22</td><td class="wbgt_lv2">22</td><td class="wbgt_lv2">24</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv2">23</td></tr>
+<tr class="day"><th class="point">釧路</th><td class="wbgt_lv2">24</td><td class="wbgt_lv2">22</td><td class="wbgt_lv2">23</td><td class="wbgt_lv1">18</td><td class="wbgt_lv1">17</td><td class="wbgt_lv1">17</td><td class="wbgt_lv1">20</td><td class="wbgt_lv1">19</td><td class="wbgt_lv2">22</td><td class="wbgt_lv1">19</td><td class="wbgt_lv1">19</td><td class="wbgt_lv1">18</td><td class="wbgt_lv1">19</td><td class="wbgt_lv1">19</td><td class="wbgt_lv2">22</td><td class="wbgt_lv2">22</td><td class="wbgt_lv2">23</td><td class="wbgt_lv1">19</td><td class="wbgt_lv1">19</td><td class="wbgt_lv1">19</td></tr>
+<tr class="day"><th class="point">青森</th><td class="wbgt_lv4">28</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">29</td><td class="wbgt_lv2">24</td><td class="wbgt_lv2">23</td><td class="wbgt_lv3">25</td><td class="wbgt_lv4">29</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">31</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">29</td><td class="wbgt_lv3">27</td><td class="wbgt_lv2">24</td><td class="wbgt_lv2">22</td></tr>
+<tr class="day"><th class="point">仙台</th><td class="wbgt_lv4">30</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">31</td><td class="wbgt_lv3">25</td><td class="wbgt_lv2">24</td><td class="wbgt_lv2">24</td><td class="wbgt_lv4">29</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv4">30</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">25</td></tr>
+<tr class="day"><th class="point">東京</th><td class="wbgt_lv5">33</td><td class="wbgt_lv5">32</td><td class="wbgt_lv5">32</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">26</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">32</td><td class="wbgt_lv5">32</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">27</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">32</td><td class="wbgt_lv5">32</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td></tr>
+<tr class="day"><th class="point">長野</th><td class="wbgt_lv4">30</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">31</td><td class="wbgt_lv2">24</td><td class="wbgt_lv2">23</td><td class="wbgt_lv2">23</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">30</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">25</td><td class="wbgt_lv2">24</td><td class="wbgt_lv3">25</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">30</td><td class="wbgt_lv5">31</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">26</td></tr>
+<tr class="day"><th class="point">名古屋</th><td class="wbgt_lv5">31</td><td class="wbgt_lv5">32</td><td class="wbgt_lv5">32</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td><td class="wbgt_lv4">30</td><td class="wbgt_lv5">32</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">27</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">32</td><td class="wbgt_lv5">32</td><td class="wbgt_lv4">29</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">27</td></tr>
+<tr class="day"><th class="point">新潟</th><td class="wbgt_lv4">30</td><td class="wbgt_lv5">33</td><td class="wbgt_lv4">30</td><td class="wbgt_lv3">25</td><td class="wbgt_lv2">24</td><td class="wbgt_lv3">25</td><td class="wbgt_lv4">29</td><td class="wbgt_lv5">33</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td></tr>
+<tr class="day"><th class="point">金沢</th><td class="wbgt_lv4">29</td><td class="wbgt_lv5">34</td><td class="wbgt_lv4">30</td><td class="wbgt_lv3">25</td><td class="wbgt_lv2">24</td><td class="wbgt_lv3">25</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">34</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">28</td></tr>
+<tr class="day"><th class="point">大阪</th><td class="wbgt_lv5">32</td><td class="wbgt_lv4">30</td><td class="wbgt_lv5">31</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">29</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">30</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">29</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">27</td></tr>
+<tr class="day"><th class="point">広島</th><td class="wbgt_lv4">30</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">30</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">30</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td></tr>
+<tr class="day"><th class="point">松江</th><td class="wbgt_lv5">31</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">30</td><td class="wbgt_lv3">25</td><td class="wbgt_lv2">24</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">25</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">30</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">25</td><td class="wbgt_lv2">24</td></tr>
+<tr class="day"><th class="point">高知</th><td class="wbgt_lv5">32</td><td class="wbgt_lv4">30</td><td class="wbgt_lv5">32</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">25</td><td class="wbgt_lv2">23</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">30</td><td class="wbgt_lv5">32</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td></tr>
+<tr class="day"><th class="point">福岡</th><td class="wbgt_lv5">31</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">29</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">26</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">28</td></tr>
+<tr class="day"><th class="point">鹿児島</th><td class="wbgt_lv5">32</td><td class="wbgt_lv5">33</td><td class="wbgt_lv5">31</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">30</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">33</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">29</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td></tr>
+<tr class="day"><th class="point">名瀬</th><td class="wbgt_lv5">31</td><td class="wbgt_lv5">32</td><td class="wbgt_lv5">31</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv4">29</td><td class="wbgt_lv5">32</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">29</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">27</td><td class="wbgt_lv5">31</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">26</td></tr>
+<tr class="day"><th class="point">那覇</th><td class="wbgt_lv4">30</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">30</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">25</td><td class="wbgt_lv4">28</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">30</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">25</td><td class="wbgt_lv3">26</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">26</td><td class="wbgt_lv3">26</td></tr>
+<tr class="day"><th class="point">石垣島</th><td class="wbgt_lv5">32</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">30</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">30</td><td class="wbgt_lv5">31</td><td class="wbgt_lv4">29</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">27</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">30</td><td class="wbgt_lv4">29</td><td class="wbgt_lv4">28</td><td class="wbgt_lv3">27</td><td class="wbgt_lv3">26</td></tr>
+</tbody></table>
+		</div>
+	</div>
+	<!-- <p class="w80 text_r">※令和7年度より、実測値の提供を47地点（47都道府県に1地点ずつ）に拡大しました。</p> -->
+
+
+
+	<div class="content_area">
+		<h4>提供している暑さ指数について</h4>
+		<p class="w80">ここに掲載されている暑さ指数（ＷＢＧＴ）の予測値と現在の暑さ指数の推計値（実況推定値）は、気象庁の資料に基づいて独自の方法で算出したものであるため、実際の値とは若干異なることがあります。<br>また、住宅やオフィス街等立地条件によっても値は若干異なると考えられますのでご注意ください。</p>
+		<p class="w80">全国47か所の実測値については、各地点の観測機器や通信回線の状況により、欠測となる場合があります。欠測の場合は、各地点の実況推定値を使用していますので、ご了承ください。</p>
+    
+	</div> <!-- end of content_area -->
+	</div> <!-- end of maincontent -->
+
+
+	<!--フッター部分-->
+	
+
+<!-- フッター -->
+<div id="fwrapper">
+
+	<!-- ページリスト -->
+	<div class="fcontent footer_pagelist">
+																			<div class="pagelist_area">
+						<dl>
+																				<dt>全国の暑さ指数(WBGT)</dt>
+																<dd><a href="https://www.wbgt.env.go.jp/wbgt_data.php">・暑さ指数の実況と予測</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/mail_service.php">・暑さ指数メール配信サービス(外部)</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/data_service.php">・暑さ指数電子情報提供サービス</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_report.php">・暑さ指数と熱中症救急搬送人員　速報</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/doc_trendcal.php">・熱中症リスクカレンダー</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/wbgt_data_download.php">・暑さ指数の実況値・予測値ダウンロード</a></dd>
+																	<dt>熱中症特別警戒情報・熱中症警戒情報</dt>
+																<dd><a href="https://www.wbgt.env.go.jp/alert.php">・発表状況と発表履歴</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/about_special_alert.php">・熱中症特別警戒情報とは</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/about_alert.php">・熱中症警戒情報とは</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/alert_mail_service.php">・熱中症警戒アラート等メール配信サービス(外部)</a></dd>
+																	<dt>暑さ指数(WBGT)について</dt>
+																<dd><a href="https://www.wbgt.env.go.jp/wbgt.php">・暑さ指数とは？</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/doc_observation.php">・暑さ指数の詳しい説明</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/wbgt_detail.php">・当サイトで提供する暑さ指数について</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/lifewbgt.php">・生活の場の暑さ指数</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/wbgt_lp.php">・暑さ指数について学ぼう</a></dd>
+																		</dl>
+					</div>
+										<div class="pagelist_area">
+						<dl>
+																				<dt>熱中症対策</dt>
+																<dd><a href="https://www.wbgt.env.go.jp/heatillness.php">・熱中症の予防方法と対処方法</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_checksheet.php">・熱中症の対処方法（応急処置）</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_library.php">・熱中症について学べる動画</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_shelter.php">・指定暑熱避難施設（クーリングシェルター）・リンク集</a></dd>
+																	<dt>普及啓発資料</dt>
+																<dd><a href="https://www.wbgt.env.go.jp/heatillness_pr.php#keypoints">・熱中症予防のポイント</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_pr.php#alert">・熱中症警戒アラート</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_pr.php#manual">・熱中症環境保健マニュアル</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_pr.php#event_guideline">・夏季のイベントにおける熱中症対策ガイドライン</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_pr.php#leaflets">・熱中症予防に役立つ配布資料</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_pr.php#sympo">・熱中症予防の動画・音声コンテンツ</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_pr.php#sympo">・熱中症対策に係るシンポジウム</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/doc_city_guideline.php">・まちなかの暑さ対策ガイドライン</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_pr.php#guidance">・熱中症予防対策ガイダンス</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_pr.php#sef_guideline">・学校における熱中症対策ガイドライン作成の手引き</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/doc_model_projects.php">・地域における熱中症対策の先進的な取組事例集</a></dd>
+																		</dl>
+					</div>
+										<div class="pagelist_area">
+						<dl>
+																				<dt>関係府省庁の取組</dt>
+																<dd><a href="https://www.wbgt.env.go.jp/heatillness_rma_ap.php">・熱中症対策実行計画</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/doc_ccaa.php">・改正気候変動適応法</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_rma_portal.php">・関係府省庁の取組</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_rma.php">・熱中症対策推進会議</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/doc_shsa.php">・熱中症特別警戒情報等に関する指針・事例集等</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/month.php">・熱中症予防強化キャンペーン</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_rma_sg.php">・熱中症対策に関する検討会</a></dd>
+																	<dd><a href="https://www.wbgt.env.go.jp/heatillness_rma_moe.php">・環境省の取組</a></dd>
+																	<dt>民間事業者との取組</dt>
+																<dd><a href="https://www.wbgt.env.go.jp/private_sector.php">・民間事業者との取組</a></dd>
+									</dl>
+					</div>
+			</div>
+
+	<!-- フッターメニュー -->
+	<div class="footer_menu">
+		<a href="https://www.wbgt.env.go.jp/tos.php" class="fmenuselect">ご利用にあたって</a>
+		<a href="https://www.wbgt.env.go.jp/faq.php" class="fmenuselect">よくある質問</a>
+		<a href="https://www.wbgt.env.go.jp/helpdesk.php" class="fmenuselect">お問い合わせ</a>
+		<a href="https://www.wbgt.env.go.jp/sitemap.php" class="fmenuselect">サイトマップ</a>
+		<a href="https://www.wbgt.env.go.jp/wbgt_data.php#hwrapper" class="fmenuselect">ページの先頭へ戻る</a>
+	</div>
+
+	<!-- 問い合わせ先 -->
+	<div class="footer_address">
+		<div class="hcontent">
+			<dl>
+				<dt><span class="fswb">環境省</span>（法人番号 1000012110001)</dt>
+				<dd>〒100-8975　東京都千代田区霞が関1-2-2 中央合同庁舎5号館</dd>
+		<dd style="font-size:120%;"><span style="border-radius:3px;background:#ff0028;color:#fff;padding:0em 0.3em;margin: 0em 0.5em 0.5em -3px;font-size:90%;">メール</span><a href="mailto:wbgt_helpdesk@wics.co.jp?subject=" style="text-decoration:none;"><span style="font-family:Century;font-weight: bold;font-size:110%;">wbgt_helpdesk@wics.co.jp</span></a><span style="font-size:80%;">（<a href="https://www.wbgt.env.go.jp/helpdesk.php" style="text-decoration:underline;">当サイトに関するお問い合わせ）</a></span></dd>
+		<dd style="font-size:95%;"><span style="border-radius:3px;background:#ff0028;color:#fff;padding:0em 0.3em;margin: 0em 0.5em 0.5em 0em;font-size:90%;">TEL</span><span class="tel2 fswb" style="color: #000;font-weight:normal;">03-6630-6243</span>（<a href="https://www.wbgt.env.go.jp/helpdesk.php" style="text-decoration:underline;">当サイトに関するお問い合わせ</a>［平日 9:00～17:00］）</dd>
+				<dd>TEL  <span class="tel0">03-3581-3351</span>（代表）</dd>
+				<dd><div style="border-radius:5px; border:3px solid #ff0028;background:#fff;padding:1em 1em 1em 1em;margin:1em auto 1em 0em;"><span style="display:inline-block;color: #ff0028;font-size:140%;font-weight:bold; margin-bottom:0.5em;">ヘルプデスクの受付電話混雑緩和に関するご協力のお願い</span><br>
+					現在、受付電話が非常に込み合っていますので、緊急時などお急ぎの時以外は<a href="mailto:wbgt_helpdesk@wics.co.jp?subject=" style="text-decoration: underline;color: #ff0028;font-size:110%;font-weight:bold;">メールでのお問い合わせをお願いいたします。</a><br>
+					皆様から寄せられたお問い合わせの多い質問を「<a href="https://www.wbgt.env.go.jp/faq.php" class="uline">よくある質問</a>」として掲載していますので、お問い合わせの前に、ご質問内容が掲載されていないか必ずご確認ください。<br>
+					職場における熱中症対策の強化については、まずは<a href="https://www.wbgt.env.go.jp/faq2.php#faq7-16" class="uline" style="color: #ff0028;">こちら</a>をご確認ください。</div></dd>
+			</dl>
+		</div>
+	</div>
+
+	<!-- コピーライト -->
+	<div class="footer_copy">Copyright © 2006-2026 Ministry of the Environment Government of Japan.</div>
+
+</div>
+
+
+
+</body></html>

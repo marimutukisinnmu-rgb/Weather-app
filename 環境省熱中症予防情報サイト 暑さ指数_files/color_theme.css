@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/* ==================================================
+ * color_theme.css
+ * CUD color set for www.wbgt.env.go.jp
+ * created: 2019-03-20 yoshida@wics
+ * changed: 2019-03-21 yoshida@wics
+ * changed: 2019-03-25 yoshida@wics
+ * ================================================== */
+
+.L1_Lv7, .L2_Lv7, .L3_Lv7, #present_lv7, .wbgtdata_lv7n, .wbgtdata_lv7s, .map_ct_lv7,  .num_lv7, .day_lv7, .wbgt7, .wbgt_lv7 { color: #ffffff; background-color: #0c000c; }
+.L1_Lv6, .L2_Lv6, .L3_Lv6, #present_lv6, .wbgtdata_lv6n, .wbgtdata_lv6s, .map_ct_lv6,  .num_lv6, .day_lv6, .wbgt6, .wbgt_lv6 { color: #ffffff; background-color: #b40068; }
+.L1_Lv5, .L2_Lv5, .L3_Lv5, #present_lv5, .wbgtdata_lv5n, .wbgtdata_lv5s, .map_ct_lv5,  .num_lv5, .day_lv5, .wbgt5, .wbgt_lv5 { color: #ffffff; background-color: #ff2800; }
+.L1_Lv4, .L2_Lv4, .L3_Lv4, #present_lv4, .wbgtdata_lv4n, .wbgtdata_lv4s, .map_ct_lv4,  .num_lv4, .day_lv4, .wbgt4, .wbgt_lv4 { color: #000000; background-color: #ff9600; }
+.L1_Lv3, .L2_Lv3, .L3_Lv3, #present_lv3, .wbgtdata_lv3n, .wbgtdata_lv3s, .map_ct_lv3,  .num_lv3, .day_lv3, .wbgt3, .wbgt_lv3 { color: #000000; background-color: #faf500; }
+.L1_Lv2, .L2_Lv2, .L3_Lv2, #present_lv2, .wbgtdata_lv2n, .wbgtdata_lv2s, .map_ct_lv2,  .num_lv2, .day_lv2, .wbgt2, .wbgt_lv2 { color: #000000; background-color: #a0d2ff; }
+.L1_Lv1, .L2_Lv1, .L3_Lv1, #present_lv1, .wbgtdata_lv1n, .wbgtdata_lv1s, .map_ct_lv1,  .num_lv1, .day_lv1, .wbgt1, .wbgt_lv1 { color: #ffffff; background-color: #218cff; }
+.L1_Lv0, .L2_Lv0, .L3_Lv0, #present_lv0, .wbgtdata_lv0n, .wbgtdata_lv0s, .map_ct_null, .num_lv0, .day_lv0, .wbgt0, .wbgt_na  { color: #000000; background-color: #a0a0a0; }
+
+.dayon,  a:hover.dayon,  a:link.dayon,  .rollover_on  { color: #ffffff; background-color: #007ac7; }
+.dayoff, a:hover.dayoff, a:link.dayoff, .rollover_off { color: #007ac7; background-color: #ffffff; }
+
+.stop_info, .notice_head { color: #000000; background-color: #ff6400; }
+.stop_box,  .notice_body { color: #000000; background-color: #ffeae0; border-color: #ff6400; }

@@ -1,0 +1,1413 @@
+/* @charset "utf-8"; */
+
+
+/* font set */
+html, body {
+	font-family: Meiryo, sans-serif, "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic ;
+}
+
+
+/* ------------------------------
+   base
+   ------------------------------ */
+html {
+	width: 100%;
+	height:100%;
+	margin : 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	overflow: scroll;
+
+/*	overflow-y: scroll;
+	overflow-x: hidden;*/
+}
+
+body{
+  -webkit-text-size-adjust: 100%;
+  min-width: 1000px;
+/*  width: 100%; */
+  font-size: 100%;
+/*  font-size: 14px; */
+  color: #313131;
+  background-color: #e5e5e5; /* debug mode */
+  background-color: #fff;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #000000;
+}
+
+
+/* ------------------------------
+   共通スタイル
+   ------------------------------ */
+table{
+	border-collapse: collapse;
+	border-spacing:0; 
+}
+
+h1 {
+  width: 100%;
+  height: 72px;
+  background: #0060b0;
+  color: #fff;
+  margin: 0px auto 0px auto;
+  padding: 0px;
+  font-weight: normal;
+}
+
+h1 a:link, h1 a:visited, h1 a:hover, h1 a:active {
+  color: inherit;
+  text-decoration: none; /* 画像非表示対応 */
+}
+
+h2 {
+  width: 100%;
+  height: 40px;
+  background: #0160b0;
+  color: #fff;
+  font-size: 150%;
+  font-weight: normal;
+  text-align: center;
+  line-height: 190%;
+  margin: 1em auto 10px auto;
+/*  margin: 10px auto 0px auto; */
+  padding: 0.5em 0em 0.4em 0em;
+}
+h2.font_s span{ /* 20240318 add */
+  font-size:90%
+}
+
+h3{
+	width: calc(98% - 40px);
+	height: 35px;
+	color: #0160b0;
+	font-size:135%;
+	font-weight: normal;
+	text-align:center;
+	line-height:190%;
+	margin: 2em auto 0em auto;
+	border: solid 1px #0160b0;
+	border-width: 2px 20px;
+	padding: 0.4em 0em 0.4em 0em;
+}
+
+h3.font_s{
+  font-size: 120%;
+}
+
+h4{
+	width: 95%;
+	height: 36px;
+	background:#fef9b7;
+	font-size:130%;
+	font-weight: normal;
+	line-height:190%;
+	text-indent: 2em;
+	margin: 4em auto 2em auto;
+	padding: 0.5em 0em 0.4em 0em;
+}
+
+h4.font_s{
+  font-size: 120%;
+}
+
+h3 + h4 {
+	margin-top:  2em;
+}
+
+h5{
+	width: 90%;
+	height: 35px;
+	font-size:130%;
+	font-weight: normal;
+	line-height:160%;
+	text-indent: 0.5em;
+/*	margin: 10px auto 0px auto; */
+	margin: 2em auto 2em auto;
+	border-bottom: solid 8px #aed5fe;
+}
+
+
+/* 重要(アラート・お知らせ) */
+.notice,
+.notice_alert {
+/*  width: 1000px; */
+/*  margin: 0px auto 10px auto; */
+  margin-bottom: 10px;
+  padding: 0px 0px 0px 0px;
+  border: solid 1px #0160b0;
+}
+.notice_alert {
+  border-color: #c00;
+}
+
+.notice span.title,
+.notice_alert span.title {
+  display: block;
+  height: 30px;
+  background: #0160b0;
+  color: #ffffff;
+  font-size:125%;
+  font-weight: normal;
+  text-align:center;
+  padding: 0px 0px 0px 0px;
+}
+.notice_alert span.title {
+  background: #c00;
+  color: #fff;
+}
+
+.notice span.msg,
+.notice_alert span.msg {
+  display: block;
+  padding: 1em 10% 1em 10%;
+}
+
+
+/* アラート告知 */
+.alert_telop {
+	margin: 1em auto;
+	max-width: 1120px;
+	min-width: 900px;
+/* height: 64px; 20240214 del */
+/* font-size: 150%; 20240214 del */
+	background-color: #c00;
+	color: #fff;
+	background-image:
+		repeating-linear-gradient( 45deg, #cc3232 0px, #cc3232 1px, transparent 1px, transparent 5px),
+		repeating-linear-gradient(-45deg, #cc3232 0px, #cc3232 1px, transparent 1px, transparent 5px); /* 20250703 add */
+/*  background-image: url(/img/alert_telop_bg.png); 20250703 del */
+/* display: flex;  20240214 del */
+/*  justify-content: center; 20240214 del */
+/*  align-items: center; 20240214 del */
+  padding: 1em 0em 2em 0em; /* 20240214 add */
+}
+
+
+/* 熱中症特別警戒アラート */
+.alert_telop span.alert_t{
+	display: inline-block;
+	background-color: #000;
+	border: 1px solid #fff;
+	padding: 0.3em 1.5em 0.1em 1.5em;
+	margin-right: 1em;
+}
+
+/* 熱中症警戒アラート */
+.alert_telop span.alert_k{
+  display: inline-block;
+  color: #000;
+	text-shadow:1px 1px 0px #FFF, -1px -1px 0px #FFF,
+             -1px 1px 0px #FFF,  1px -1px 0px #FFF,
+              0px 1px 0px #FFF,  0px -1px 0px #FFF,
+             -1px 0px 0px #FFF,  1px  0px 0px #FFF;
+  background-color: #c800ff;
+	letter-spacing: 0.1em;
+	border: 1px solid #fff;
+	padding: 0.3em 1.5em 0.1em 1.5em;
+	margin-right: 1em;
+}
+
+.alert_telop a{
+	color: #fff;
+	margin-left: 1em;
+}
+
+.alert_telop p{
+	width:100%;
+	font-size: 120%;
+	color: #fff;
+	text-align: center;
+}
+
+.alert_telop .info{
+	color: #fff;
+	text-align: left;
+	padding: 0em 10em;
+}
+
+.alert_telop_padding {
+  padding: 0.5em 0em 0.5em 0em;
+}
+
+/* 箇条書き */
+ul.bullets-wrap {
+	width: 800px;
+  list-style:  none;      /* デフォルトのアイコンを消す */
+	margin: 0px auto 0px auto;
+  padding: 0;             /* デフォルト指定上書き */
+}
+
+li.bullets {
+	font-size:90%;
+	padding-left: 1em;
+  text-indent: -1em;
+	margin: 20px auto 0px auto;
+	padding: 0px 0px 0px 0px;
+}
+
+li.bullets:before {
+  content:  "";     				/* 空の要素作成 */
+  width:  8px;              /* 幅指定 */
+  height:  8px;             /* 高さ指定 */
+  display:  inline-block;   /* インラインブロックにする */
+  background-color: #0060b0;/* 背景色指定 */
+  border-radius:  50%;      /* 要素を丸くする */
+	position:  relative;      /* 位置調整 */
+  top: -2px;                /* 位置調整 */
+  margin-right: 5px;        /* 余白指定 */
+}
+
+/* メインコンテンツエリア */
+.content_area{
+	width:100%;
+	margin: 0px auto 20px auto;
+	padding: 10px 0px;
+}
+
+/* 文章修飾 */
+.sentence1{
+	width:800px;
+	font-size:90%;
+	margin: 20px auto 0px auto;
+/*	border: solid 1px #cc0000;*/
+}
+
+.sentence1 img{
+	display: block;
+	margin: 1em auto 1em auto;
+}
+
+.sentence1 span{
+	display: inline-block;
+/*	text-align:center;*/
+}
+
+.sentence2{
+	width:750px;
+	font-size:90%;
+	margin: 20px auto 0px auto;
+/*	border:solid 1px #cc0000;*/
+}
+
+
+
+/* レイアウト・文字修飾 */
+.w100,
+.w90,
+.w80,
+.w70,
+.w60,
+.w50 {
+  width: 100%;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+}
+.w90 { width: 90%; }
+.w80 { width: 80%; }
+.w70 { width: 70%; }
+.w60 { width: 60%; }
+.w50 { width: 50%; }
+
+.text_c { text-align: center; }
+.text_r { text-align: right; }
+.text_l { text-align: left; }
+.text_i { text-indent: 1em; }
+.text_ri { text-indent: -1em; }
+
+.fs90 { font-size: 90%; }
+.fs80 { font-size: 80%; }
+.fswb { font-weight: bold; }
+.fswn { font-weight: normal; }
+
+
+
+/* ヘッダー */
+
+/* 幅全体に広げるヘッダー */
+#hwrapper {
+  width: 100%;
+/*  height: 100px;*/
+  background: #fff;
+  margin : 0px 0px 0px 0px;
+}
+
+/* ヘッダー要素配置範囲 */
+div.hcontent {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 言語選択・モバイル・携帯 */
+.lang_menu {
+/*  width: 1000px; */
+  height: 30px;
+  padding-top: 2px;
+}
+
+.langselect {
+/*  width: 1000px; */
+/*  display: inline-block; */
+/*  margin: 0em 0px 0px 0px; */
+  font-size:80%;
+  text-align: right;
+}
+
+img.lmenu_icon {
+  vertical-align: middle;
+}
+
+span.lmenu a {
+  text-decoration: none; /* 下線解除 */
+  margin: 0px 10px 0px 0px;
+}
+
+span.lmenu+ span.lmenu:not(:last-child) {
+  border-left: 1px solid #000;
+  padding-left: 10px;
+}
+
+
+/* サイトタイトル */
+
+.header_title {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #0060b0;
+  color: #fff;
+}
+
+.site_title {
+/*
+  width: 1000px;
+  margin: 0px auto 0px auto;
+*/
+  padding: 0px;
+  text-align: center;
+}
+
+img.top_title_moe {
+	border: none;
+	width: 158px;
+	height:72px;
+	margin: 0px 0px 0px 20px;
+}
+
+img.top_title_site {
+	border: none;
+	width: 400px;
+	height:72px;
+	margin: 0px 0px 0px 0px;
+}
+
+/* -------------------------------
+   ヘッダー > メインメニュー
+   ------------------------------- */
+.main_menu {
+/*
+  width: 1000px;
+*/
+  height: 58px;	/* 20240205 40->58 */
+/*  background: #fff45c;*/
+  text-align:center;
+  border-bottom: solid 1px #c7c7c7;
+  margin: 0px auto 0px auto;
+  padding: 0.5em 0px 0px 0px; /* 20240205 1em->0.5em */
+/*  border:solid 1px #cc0000; */
+  display: flex; /* 20240205 add */
+  flex-wrap: wrap; /* 20240205 add */
+}
+
+.main_menu a.mmenuselect,
+.main_menu a {
+  width: 142px; /* 20240205 add */
+  height: 50px; /* 20240205 add */
+  font-size: 90%;
+  font-weight: bold;
+  text-decoration: none; /* 下線なし */
+  margin: 0px 0.2em; /* 20240205 0.5em -> 0.2em */
+  padding: 0px; /* 20240205 3px -> 0px */
+  position: relative; /* 20240205 add */
+/*  border: solid 3px #fff; */
+}
+.main_menu a.home { /* 20240205 add */
+  width: 50px;
+}
+.main_menu a.other { /* 20240205 add */
+  width: 90px;
+}
+.main_menu a > span { /* 20240205 add */
+  position: absolute;
+  width: 100%;
+  top: 52%;
+  left: 0;
+  -webkit-transform : translateY(-50%);
+  transform : translateY(-50%);
+}
+
+.main_menu a.selected {
+/*  background: #fef9b7;*/
+  border-bottom: solid 3px #dcdcdc;
+}
+
+.main_menu a:hover, .main_menu a:active {
+/*  border: solid 3px #fef9b7;*/
+  background: #fef9b7;
+}
+
+/**********************************************
+/* メインコンテンツ
+**********************************************/
+#maincontent{
+	width: 1000px;
+/*	height:700px;*/
+	background:#ffffff;
+	margin: 0px auto 0px auto;
+	padding: 0px 0px 0px 0px;
+/*	border-bottom:solid 1px #009e96;*/
+/*	border:solid 1px #009944;*/
+}
+
+/*===========================================
+  メインコンテンツ：各ページ共通
+============================================*/
+/* -------------------------------
+   サブメニュー
+   ---------------------------------*/
+.panel_container {
+/*  width: 100%; */
+  width: 990px;
+  text-align: center;
+/*  margin: 1em auto;*/
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start; /* space-between 両端余白なし, space-around 両端余白あり, space-evenly 等間隔 */ 
+}
+
+.panel_container .item24{
+	position: relative;
+	width: calc(25% - 7px);
+	height: 90px;
+	font-size: 95%;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	line-height: 1.5em;
+	border: 1px solid #c0c0c0;
+	border-bottom: 4px solid #c0c0c0;
+	margin: 10px 2px 0px 2px;
+}
+
+.panel_container .item24 p.name {
+	position: absolute;
+	width: calc(100% - 20px);
+	top: calc(50% - 0.8em);
+	left: 0;
+	-webkit-transform : translateY(-50%);
+	transform : translateY(-50%);
+	padding: 0px 10px;
+}
+
+.panel_container .item24 span.desc {
+	display: block;
+	font-size: 90%;
+	font-weight: normal;
+	margin-top: 0.3em;
+}
+
+.panel_container .item32,
+.panel_container .item48 {
+/*  flex-basis: 220px; */ /* 220 + (5 + 9 + 1) * 2 = 250 */
+  flex-basis: 220px; /* 220 + (5 + 4 + 1) * 2 = 240 */
+/*  height: 90px;*/
+  margin: 5px;
+  padding: 4px;
+  border: solid 1px #c9c9c9;
+  border-radius: 4px;
+  cursor: pointer;
+/*  cursor: hand;*/
+}
+
+.panel_container .item24:hover,
+.panel_container .item32:hover,
+.panel_container .item48:hover,
+.panel_container .item96:hover {
+  background: #fef9b7;
+}
+
+/*.panel_container .item24 {
+/* flex-basis: 220px;  /* 220 + (5 + 4 + 1) * 2 = 240 */
+/*}*/
+
+.panel_container .item32 {
+ flex-basis: 300px;  /* 300 + (5 + 4 + 1) * 2 = 320 */
+}
+
+.panel_container .item48 {
+ flex-basis: 460px;  /* 460 + (5 + 4 + 1) * 2 = 480 */
+}
+
+.panel_container .item96 {
+ flex-basis: 940px;  /* 940 + (5 + 4 + 1) * 2 = 960 */
+}
+
+.panel_container .selected {
+  background: #fef9b7;
+  border-bottom: 4px solid #0063ac;
+}
+
+.panel_container .noborder {
+  border-color: transparent;    /* トピックスバナー用 */
+}
+
+/*
+.panel_container div p {
+  margin: 0;
+  padding: 0;
+}*/
+
+.panel_container .item32 p.name,
+.panel_container .item48 p.name,
+.panel_container .item96 p.name{
+  font-size: 95%;
+  font-weight: normal;
+  margin: 10px 0 0 0;
+  padding: 0;
+  height: 40px;
+}
+
+.panel_container div p.desc {
+  font-size: 80%;
+  font-weight: normal;
+  margin: 10px 0 0 0;
+  padding: 0;
+  height: 30px;
+}
+
+.panel_container a {
+  text-decoration: none; /* 下線解除 */
+  margin: 0;
+}
+
+.panel_container a:hover,
+.panel_container a:active {
+  background: #fef9b7;
+}
+
+/*-------------------------------
+/* パンくずリスト
+---------------------------------*/
+.area_topic-path{
+	width: 100%;
+	height: 26px;
+	background-color:#f9f9f9;
+	margin: 0px auto 0px auto;
+	padding: 0px 0px;
+	border-bottom: solid 1px #c7c7c7;
+}
+
+/* リスト */
+ol.topic-path {
+	font-size: 75%;
+	list-style-type: none;
+	margin: 0px 0px;
+	padding: 0.5em 1em;
+}
+
+/* リスト項目 */
+ol.topic-path li {
+	display: inline; /* 項目を横並び */
+	padding-left: 5px;
+}
+/* リスト項目（最初の項目） */
+ol.topic-path li.first {
+	padding-left: 5px;
+/*	text-decoration: none;*/
+}
+
+/* ===========================================
+   メインコンテンツ：HOME
+   ============================================*/
+/* JavaScriptメッセージ */
+#js_note {
+  width: 900px;
+  height: 8em;
+  background: url(/img/pict_caution.png) #c00 no-repeat 40px 40px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 100%;
+  line-height: 1.5em;
+  margin: 1em auto;
+  padding: 10px 0px 10px 100px;
+}
+
+#js_note a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/*-------------------------------
+  informationメニュー
+---------------------------------*/
+.info_menu {
+  width: 100%;
+  height:30px;
+  margin: 0 auto;
+  padding: 0.2em 0px 0px 0px;
+  text-align: right;
+}
+
+.info_menu span a { 
+  display: inline-block;
+  font-size: 75%;
+  text-decoration: none; /* 下線解除 */
+  border: solid 1px #7d7d7d;
+  border-radius: 18px;
+  margin: 0;
+  padding: 4px 10px 3px 10px;
+}
+
+.info_menu span.update a { 
+  border: solid 1px #ff7d7d;
+  padding: 4px 10px 3px 20px;
+  background: url(/img/top_info_chk.png) no-repeat;
+}
+
+/*-------------------------------
+  アラート・お知らせ
+---------------------------------*/
+
+
+/*-------------------------------
+  トピックス
+---------------------------------*/
+.topics {
+	width: 100%;
+	height:120px;
+	margin: 0px auto;
+	padding: 0px 0px 0px 0px;
+}
+
+.new_topics_area {
+	float: left;
+	position:relative;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+
+}
+
+.new_topics_pic {
+	display: inline-block;
+	float: left;
+	width: 144px;
+	height:94px;
+	text-align: center;
+	margin: 10px 0px 20px 10px;
+}
+
+.new_topics_str1 {
+	display: block;
+	float:right;
+	width: 310px;
+	font-weight:bold;
+	margin: 20px 20px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.new_topics_str2 {
+	display: block;
+	float:right;
+	width: 310px;
+	font-size:90%;
+	margin: 10px 20px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+/*-------------------------------
+  配信サービス
+---------------------------------*/
+.data_service {
+	width: 100%;
+/*	height:120px;*/
+	margin: 0px auto;
+	padding: 0px 0px 0px 0px;
+}
+
+/*-------------------------------
+  全国の暑さ指数
+---------------------------------*/
+.wbgt {
+	width: 100%;
+	height:800px;
+	margin: 0px auto;
+	padding: 0px 0px 0px 0px;
+}
+
+#wbgt_map,
+#alert_map {
+  width: 800px;
+  margin: 20px auto;
+  padding: 0;
+  text-align: center;
+}
+
+.map_overlay_text {
+  position: absolute;
+  left: 0;
+  top: 300px;
+  width: 800px;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color:rgba(48, 48, 48, 0.8);
+}
+
+.map_overlay_board {
+  position: absolute;
+  left: 100px;
+  top: 250px;
+  width: 600px;
+  height: 300px; 
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: normal;
+  background-color: rgba(255, 255, 255, 0.75);
+  color: #111;
+  border: solid 1px #9c9c9c;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map_overlay_board.sp_style{
+  left: 200px;
+}
+
+/* 時刻 */
+div.datetime_container {
+  height: 40px;
+  align-items: center;             /* ボタンを両サイドに割付 */
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;                 /* 両サイド少し空ける */
+  font-weight: normal;
+  font-size: 130%;
+  border: solid 1px #9c9c9c;       /* debug */
+}
+
+/* 地図レイヤー */
+div.map_container {
+  position: relative;              /* 子要素地図画像の位置合わせ基準 */
+  height: 800px;                   /* 高さ指定がないと後の要素が回り込む */
+}
+
+img.map_item,
+img.map_item_wbgt {                /* 子要素地図画像（top_mapからmap_itemに名称変更） */
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: auto;                   /* 各レイヤーのz-indexは管理せず（後ろの画像が上になる） */
+}
+
+/* 凡例 */
+table.wbgt_map_legend {
+  width: 800px;
+/*  border: 1px #6b6b6b solid; */     /* debug */
+  border-collapse: collapse;
+  margin: 0 auto 10px auto;
+  padding: 0;
+}
+
+table.wbgt_map_legend tr th,
+table.wbgt_map_legend tr td {
+  width: 158px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #6b6b6b;
+}
+
+table.wbgt_map_legend tr th {
+  border-bottom: transparent;
+  font-size: 85%;
+}
+
+table.wbgt_map_legend tr td {
+  border-top: transparent;
+  font-size: 75%;
+}
+
+/* 実測値 */
+#wbgt_monitor {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.wbgt_monitor_container {
+  width: 800px;
+  border: solid 1px #6b6b6b;
+  margin: 10px auto;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  line-height: 2.5em;
+}
+
+#wbgt_monitor_datetime {
+  flex-basis: 100%;
+}
+
+.wbgt_monitor_container .wbgt_monitor_site,
+.wbgt_monitor_container .alert_pref {
+  cursor: pointer;
+  cursor: hand;
+  border: solid 1px #9c9c9c;
+  margin: 1px;
+  padding: 0px;
+  flex-basis: 196px;            /* 200px */
+}
+
+.wbgt_monitor_container .wbgt_monitor_site .name {
+  display: inline-block;
+  width: 67%;
+}
+.wbgt_monitor_container .wbgt_monitor_site .value {
+  display: inline-block;
+  width: 33%;
+}
+
+
+div.wbgt_monitor_list,
+table.wbgt_monitor_list {
+  width: 800px;
+/*  font-size: 95%;*/
+  border: 1px #6b6b6b solid;     /* debug */
+  border-collapse: collapse;
+  margin: 10px auto;
+  padding: 0px;
+}
+
+#wbgt_monitor_datetime {
+  font-weight: normal;
+  font-size: 130%;
+}
+
+
+/* アラート表 */
+.wbgt_monitor_container .alert_region {
+  flex-basis: 100%;
+  background: #fef9b7;      /* h4 と同じ */
+  font-weight: normal;
+  font-size: 140%;
+}
+
+.wbgt_monitor_container .alert_pref {
+  /* .wbgt_monitor_site の記載を参照 */
+  border: solid 2px #ccc;
+  flex-basis: 194px;            /* 200px */
+}
+
+.wbgt_monitor_container .alert_on {
+/*  background: #ffc4d5; */
+  background: rgba(255, 196, 213, 0.8);
+  border-color: #b40068;        /* 気象庁 紫(180,0,104) */
+}
+
+
+table.wbgt_monitor_list th,
+table.wbgt_monitor_list td {
+  width: 90px;
+  height: 2em;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #6b6b6b;
+}
+
+table.wbgt_monitor_list td.point {
+  width: 120px;
+  border-right: transparent;
+}
+table.wbgt_monitor_list td.data {
+  width: 60px;
+  border-left: transparent;
+}
+
+/*-------------------------------
+ 関係府省庁の取組 [2025/07/03 add]
+---------------------------------*/
+ul.top_portal{
+	display: flex;
+	max-width: 960px;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
+	margin: 0 auto;
+	padding: 0;
+}
+
+ul.top_portal li{
+	display: flex;
+	height: 100px;
+	text-align: center;
+	flex: 1; /* 幅を均等 */
+	border: solid 1px #c9c9c9;
+	border-radius: 4px;
+	cursor: pointer;
+	flex-direction: column; /* 縦中央 */
+	justify-content: center; /* 縦中央 */
+	margin: 10px 5px;
+	padding: 0em;
+}
+
+ul.top_portal li a{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	flex-direction: column;
+}
+
+ul.top_portal li.portal{
+	width: 590px;
+	flex: 0 0 auto;
+}
+
+ul.top_portal li.portal p{
+	font-size: 90%;
+	margin: 0.5em 0em 0em 0;
+}
+
+ul.top_portal li.img_view{
+	border: none;
+}
+
+/* 最初と最後の margin を調整（中央寄せと両立するため） */
+ul.top_portal li:first-child {
+	margin-left: 0;
+	}
+
+ul.top_portal li:last-child {
+	margin-right: 0;
+}
+
+ul.top_portal li:hover,
+ul.top_portal li:active {
+	background: #fef9b7;
+}
+
+/*===========================================
+  メインコンテンツ：暑さ指数解説
+============================================*/
+/*-------------------------------
+  各観測場所の解説
+---------------------------------*/
+.itemlistarea{
+	width: 850px;
+	margin: 20px auto 0px auto;
+}
+
+p.itemlist-l{
+	display: inline-block;
+	width: 250px;
+	height: 40px;
+	background-color: #002063;
+	color: #ffffff;
+	font-size: 110%;
+	text-align: center;
+	font-weight:bold;
+	letter-spacing:0;
+	line-height: 2.5em;
+	margin: 0;
+	padding: 0;
+}
+
+p.itemlist-l img{
+	vertical-align: middle;
+	margin-right: 1em;
+}
+
+p.itemlist-r{
+	display: inline-block;
+	font-weight:bold;
+	text-indent:0px;
+	margin: 0 0 0 1em;
+}
+
+/*-------------------------------
+  [テーブル]日常生活に関する指針
+---------------------------------*/
+table.wbgt_list1{
+  width: 80%;
+  font-size: 95%;
+  border: 2px #6b6b6b solid;
+  border-collapse: collapse;
+  margin: 2em auto;
+/*  padding: 0; */
+}
+
+table.wbgt_list1 th {
+  height: 30px;
+  border: 1px solid #6b6b6b;
+  background-color: #ffffe5;
+  padding: 0.5em 0.5em 0.4em 0.5em;
+}
+
+table.wbgt_list1 tr{
+  border-bottom: 1px #6b6b6b solid;
+}
+
+table.wbgt_list1 td.L1_Lv2,td.L1_Lv3,td.L1_Lv4,td.L1_Lv5{
+  width: 20%;
+  line-height: 130%;
+  border: 1px #6b6b6b solid;
+    text-align: center;
+  padding: 0.5em 0.5em 0.4em 0.5em;
+}
+table.wbgt_list1 td.L1_Lv2{ background-color: #a0d2ff;}
+table.wbgt_list1 td.L1_Lv3{ background-color: #faf500;}
+table.wbgt_list1 td.L1_Lv4{ background-color: #ff9600;}
+table.wbgt_list1 td.L1_Lv5{ background-color: #ff2800;}
+
+table.wbgt_list1 td.L2{
+	width:25％;
+	line-height: 130%;
+	border: 1px #6b6b6b solid;
+	padding: 1em 1em 1em 1em;
+}
+
+table.wbgt_list1 td.L3{
+	width: 55%;
+	line-height: 130%;
+	border: 1px #6b6b6b solid;
+	text-align: left;
+	padding: 1em 1em 1em 1em;
+}
+
+/*-------------------------------
+ [テーブル]運動に関する指針
+---------------------------------*/
+table.wbgt_list2{
+  width: 80%;
+  font-size: 95%;
+  border: 2px #6b6b6b solid;
+  border-collapse: collapse;
+  margin: 2em auto;
+}
+
+table.wbgt_list2 th {
+	height:30px;
+	border: 1px solid #6b6b6b;
+	background-color: #ffffe5;
+	text-align:center;
+}
+
+table.wbgt_list2 tr{
+	border-bottom: 1px #6b6b6b solid;
+}
+
+table.wbgt_list2 td.L1{
+	width: 12%;
+	line-height: 150%;
+	border: 1px #6b6b6b solid;
+	text-align:center;
+  padding: 0.5em 0.5em 0.4em 0.5em;
+}
+
+table.wbgt_list2 td.L2_Lv1,td.L2_Lv2,td.L2_Lv3,td.L2_Lv4,td.L2_Lv5{
+	width: 12%;
+	line-height: 130%;
+	border: 1px #6b6b6b solid;
+	text-align:center;
+}
+table.wbgt_list2 td.L2_Lv1{ background-color: #218cff;}
+table.wbgt_list2 td.L2_Lv2{ background-color: #a0d2ff;}
+table.wbgt_list2 td.L2_Lv3{ background-color: #faf500;}
+table.wbgt_list2 td.L2_Lv4{ background-color: #ff9600;}
+table.wbgt_list2 td.L2_Lv5{ background-color: #ff2800;}
+
+table.wbgt_list2 td.L3_Lv1,td.L3_Lv2,td.L3_Lv3,td.L3_Lv4,td.L3_Lv5{
+	width: 22%;
+	line-height: 130%;
+	border: 1px #6b6b6b solid;
+	text-align:center;
+	padding: 0px 0px 0px 10px;
+}
+table.wbgt_list2 td.L3_Lv1{ background-color: #218cff;}
+table.wbgt_list2 td.L3_Lv2{ background-color: #a0d2ff;}
+table.wbgt_list2 td.L3_Lv3{ background-color: #faf500;}
+table.wbgt_list2 td.L3_Lv4{ background-color: #ff9600;}
+table.wbgt_list2 td.L3_Lv5{ background-color: #ff2800;}
+
+table.wbgt_list2 td.L4{
+	width: 54%;
+	line-height: 130%;
+	border: 1px #6b6b6b solid;
+	text-align: left;
+	padding: 1em 1em 1em 1em;
+}
+
+
+/* ------------------------------
+   暑さ指数(WBGT)について学ぼう
+   ------------------------------ */
+/* moved to wbgt_lp.css */
+
+
+
+/*===========================================
+  メインコンテンツ：熱中症について
+============================================*/
+/*-------------------------------
+  熱中症について学べる動画
+---------------------------------*/
+table.ylist_tbl{
+	width: 800px;
+	border: 1px #434343 solid;
+	border-collapse: collapse;
+	border-spacing:0; 
+	margin: 20px auto 20px auto;
+}
+
+table.ylist_tbl td.no{
+	width:70px;
+	border-bottom: 1px #434343 solid;
+	background-color:#e4e2dc;
+	text-align:center;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+table.ylist_tbl td.thumb{
+	width:130px;
+	border-bottom: 1px #434343 solid;
+	padding: 3px 5px 3px 5px;
+}
+
+span.thumbnail{
+	display:inline-block;
+	width: 130px;
+	height: 90px;
+	background-color: #d3d3d3;
+	background-size: 130px 90px;
+	margin: 5px 0px 5px 0px;
+}
+
+table.ylist_tbl td.text{
+	width:600px;
+	font-size:90%;
+	border-right: 1px #434343 solid;
+	border-bottom: 1px #434343 solid;
+}
+
+table.ylist_tbl span.title{
+	display:inline-block;
+	font-size:110%;
+	margin: 0.5em 0em 0em 1em;
+}
+
+table.ylist_tbl span.memo{
+	display:inline-block;
+	margin: 0.5em 1em 0.5em 1.5em;
+}
+
+table.ylist_tbl span.pdf{
+	display:block;
+	background-color: #e5e5e5;
+	text-align:right;
+	margin: 0em 1em 0.5em 0.5em;
+}
+
+/* ==============================
+   history_list  update
+   ============================== */
+dt.update {
+  margin-top:2em;
+  border-bottom: solid 1px #aed5fe;      /* color of h5 */
+  border-bottom: solid 1px #eee;
+}
+
+
+/**********************************************
+/* フッター
+**********************************************/
+/* 幅全体に広げるフッター */
+#fwrapper {
+  width: 100%;
+  background-color: #0160b0;
+  margin-top: 3em;
+}
+
+.fcontent {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ページリスト */
+.footer_pagelist {
+/*  width: 1000px; */
+  height: 600px;
+  margin: auto;
+  color: #fff;
+}
+
+.pagelist_area {
+  float: left;
+  position: relative;
+  display: inline-block;
+  width: 33%;
+  padding: 20px 0px 0px 0px;
+}
+
+.pagelist_area dt {
+  font-weight: bold;
+  margin: 1em 0em 0.5em 1em;
+  padding: 0px 0px 0px 0px;
+}
+
+.pagelist_area dd {
+  font-size: 80%;
+  margin: 0em 0em 0.3em 1em;
+  padding: 0px 0px 0px 0px;
+}
+
+.pagelist_area dl dd a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/*-------------------------------
+ フッターメニュー
+---------------------------------*/
+.footer_menu{
+/*  width: 1000px; */
+  height: 32px;
+  text-align: center;
+  border-top: solid 1px #ffffff;
+/*  margin: 0px auto 0px auto; */
+  padding: 0.5em 0px 0px 0px;
+}
+
+.footer_menu a.fmenuselect{
+  font-size: 90%;
+  font-weight:bold;
+  color: #fff;
+  text-decoration: none; /* 下線解除 */
+  margin: 0px 1em;
+}
+
+/* 問い合わせ先 */
+.footer_address {
+  width: 100%;
+  background: #efefef;
+	padding: 0.5em 0em 0.5em 0em;
+}
+
+.footer_address dl {
+  border: solid 0 #ccc;
+  border-width: 0 0 0 .9em;
+}
+
+.footer_address dt{
+  // margin-left: 40px;
+  margin-left: .6em;
+  font-size: 90%;
+}
+
+.footer_address dd{
+  // margin-inline-start: 40px;
+  margin-inline-start: .6em;
+  font-size: 80%;
+}
+
+.footer_address dd > span.tel {
+  color: #fff;
+  background: #f24814;
+	margin: 0em -0.2em;
+	padding: 0em 0.2em;
+}
+
+.footer_address dd > span.tel2 {
+  color: #f24814;
+}
+
+.footer_address dd > span.tel0 {
+  pointer-events: none;
+}
+
+/* Copyright */
+
+.footer_copy {
+/*  width: 1000px; */
+  width: 100%;
+  height: 30px;
+  font-size: 80%;
+/*  background: #dcdcdc; */
+  background: #fff;
+  color: #3a3a3a;
+  text-align: center;
+  line-height: 30px;
+  margin: 0px auto;
+}
+
+/* 箇条書き（全ページ共通）
+---------------------------------------------------------------------------*/
+ul.marker > li{
+	margin-top: 1em;
+}
+
+ul.marker > li > ul{
+	margin-top: 1em;
+}
+
+ul.check{
+	margin-top: 1em;
+}
+ul.check li{
+	list-style-type: none;
+	text-indent: -1em;
+	padding-left: 1em;
+}
+ul.check li::before{
+	content: "✔";
+	margin-right: 0.3em;
+}
+
+ul.come li{
+	list-style-type: none;
+	text-indent: -1em;
+	margin-top: 1em;
+	padding-left: 1em;
+}
+
+ol li{
+  margin-top: 1em;
+}
+
+
+/* 例などサンプルエリア枠 */
+.sample_area{
+	width: calc(85% - 1em);
+	border-radius: 10px;
+	border: 1px solid #c2c2c2;
+	margin: 2em auto;
+	padding: 1em 0em 1em 1em;
+}

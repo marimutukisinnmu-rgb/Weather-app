@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+ul#asc_wbgt_navigation {
+        margin:0px 0px 0px 41px;
+	/*clear: both;  */    /* float をクリア */
+}
+
+ul#asc_wbgt_navigation li {
+        float:left;
+        list-style:none;
+        margin:0px 0px 0px 0px;
+}
+
+ul#asc_wbgt_navigation span {
+        display:block;
+        height:31px;
+        width:31px;
+        margin: 0px 0px 0px 26px;
+        padding: 8px 0px 0px 0px;
+        /*text-indent:-9898px;*/
+        background: url('../img/mat_predic_lv.png') no-repeat;
+/*      font-size: 16px; */
+        font-size: 71.4%;
+        text-align: center;
+}
+
+ul#asc_wbgt_navigation span.wbgt0    {background-position:-155px 0px;}
+ul#asc_wbgt_navigation span.wbgt1    {background-position:0px 0px;}
+ul#asc_wbgt_navigation span.wbgt2    {background-position:-31px 0px;}
+ul#asc_wbgt_navigation span.wbgt3    {background-position:-62px 0px;}
+ul#asc_wbgt_navigation span.wbgt4    {background-position:-93px 0px;}
+ul#asc_wbgt_navigation span.wbgt5    {background-position:-124px 0px;}
+
+ul#asc_wbgt_navigation_1w {
+        margin:0px 0px 0px 8px;
+	/*clear: both;  */    /* float をクリア */
+}
+
+ul#asc_wbgt_navigation_1w li {
+        float:left;
+        list-style:none;
+        margin:0px 0px 0px 0px;
+}
+
+ul#asc_wbgt_navigation_1w span {
+        display:block;
+        height:31px;
+        width:31px;
+        margin: 0px 0px 0px 34px;
+        padding: 8px 0px 0px 0px;
+        /*text-indent:-9898px;*/
+        background: url('../img/mat_predic_lv.png') no-repeat;
+/*      font-size: 16px; */
+        font-size: 71.4%;
+        text-align: center;
+}
+
+ul#asc_wbgt_navigation_1w span.wbgt0    {background-position:-155px 0px;}
+ul#asc_wbgt_navigation_1w span.wbgt1    {background-position:0px 0px;}
+ul#asc_wbgt_navigation_1w span.wbgt2    {background-position:-31px 0px;}
+ul#asc_wbgt_navigation_1w span.wbgt3    {background-position:-62px 0px;}
+ul#asc_wbgt_navigation_1w span.wbgt4    {background-position:-93px 0px;}
+ul#asc_wbgt_navigation_1w span.wbgt5    {background-position:-124px 0px;}
+
+/* 予報 暑さ指数 */
+#asc_wbgt_tag {
+        width: 100%;
+        /*border-width:1px;
+        border-style: solid;*/
+	background-color: rgba(0,0,0,0);
+	margin: 0px 0px 0px 0px;
+        text-align: left;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;       /* 今日・明日・明後日・過去1週間 共通 */
+}
+
+#chart1 {
+	position: absolute;
+	left: 55px;
+	top: 3px;
+}
+
+/* 凡例 ---------------------------*/
+#asc_legend {
+	/*width: 100%;
+ 	border-width: 1px;
+        border-style: solid;*/
+	background-color: rgba(0,0,0,0);
+	margin: 0px 0px 0px 0px;
+	position: absolute;
+	left: -10px;
+	top: 50px;
+}
+
+table.asc_tbl_legend {
+	border-collapse:collapse;
+/*	width: 120px;*/
+/*      font-size: 12px; */
+        font-size: 53.6%;
+        font-weight: normal;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+table.asc_tbl_legend td.asc_td {
+	height: 20px;
+}
+
+table.asc_tbl_legend td.asc_tomorrow {
+	/*color: rgb(242, 25, 112);*/
+/*--  2019.03.15 color: #f1196f;  --*/
+        color: #000000;
+        text-align:left;
+	margin: 0px 0px 0px 0px ;
+	padding: 0px 0px 0px 0px;
+	white-space: nowrap;
+}
+
+table.asc_tbl_legend td.asc_today {
+	/*color: rgb(35, 35, 35);*/
+/*-- 2019.03.15  color: #232323;  --*/
+        color: #000000;
+        text-align:left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	white-space: nowrap;
+}
+
+table.asc_tbl_legend td.asc_yesterday {
+	/*color: rgb(86, 135, 0);*/
+/*-- 2019.03.15  color: #568700;  --*/
+        color: #000000;
+        text-align:left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	white-space: nowrap;
+}
+
+table.asc_tbl_legend td.asc_weekago {
+	/*color: rgb(0, 133, 236);*/
+/*-- 2019.03.15 color: #0085ec;  --*/
+        color: #000000;
+        text-align:left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	white-space: nowrap;
+}
+
+table.asc_tbl_legend td.asc_tomorrow_img {
+        width: 14px;
+        height: 10px;
+        background: url('../img/smpline.png') no-repeat;
+        background-position: -28px 5px;
+}
+
+table.asc_tbl_legend td.asc_today_img {
+        width: 14px;
+        height: 10px;
+        background: url('../img/smpline.png') no-repeat;
+        background-position: 0px 5px;
+}
+
+table.asc_tbl_legend td.asc_yesterday_img {
+        width: 14px;
+        height: 10px;
+        background: url('../img/smpline.png') no-repeat;
+        background-position: -14px 5px;
+}
+
+table.asc_tbl_legend td.asc_weekago_img {
+        width: 14px;
+        height: 10px;
+        background: url('../img/smpline.png') no-repeat;
+        background-position: -42px 5px;
+}
+
+#asc_xticks {
+/*      font-size: 12px; */
+        font-size: 50%;
+        font-weight: normal;
+        background-color: rgba(0,0,0,0);
+        margin: 0px 0px 0px 9px;
+	position: absolute;
+	left: 60px;
+	top: 190px;
+}
+
+table.asc_tbl_xticks {
+        width: 100%;
+}
+table.asc_tbl_xticks td {
+        text-align: center;
+}
+
+/* 凡例 ---------------------------*/
+/* graph_1w.php用 */
+#asc_graph_legend {
+        background-color: rgba(0,0,0,0);
+	margin: 0px 0px 0px 0px;
+        text-align: center;
+        width:77px;
+        /*border-width: 1px;
+        border-style: solid;*/
+	position: absolute;
+	left: 13px;
+	top: 50px;
+}
+
+#asc_graph_legend_1w {
+/*      font-size: 12px; */
+        font-size: 75%;
+        font-weight: normal;   
+}
+#asc_graph_legend_2w {
+        font-size: 50%;
+        font-weight: normal;   
+}
+table.asc_tbl_daylist_tile {
+        margin-left: auto;
+        margin-right: auto;
+/*      font-size: 18px; */
+        font-size: 112.5%;
+        font-weight: normal;
+        width: 461px;
+        height: 40px;
+}
+
+table.asc_tbl_daylist {
+        border-style: solid;
+        border-width: 2px;
+        border-collapse: collapse;
+        border-color: #000000;
+        margin-left: auto;
+        margin-right: auto;
+/*      font-size: 13px; */
+        font-size: 81.3%;
+        font-weight: normal;
+}
+
+table.asc_tbl_daylist td.asc_head {
+        text-align: center;
+        border-style: solid solid double solid;
+        border-width: 1px 1px 3px 1px;
+        background-color: #ceccb6;
+        height: 1em;
+}
+
+table.asc_tbl_daylist td.asc_body {
+        text-align: right;
+        border-style: solid;
+        border-width: 1px;
+        height: 1em;
+        padding: 0px 5px 0px 0px;
+}
+
+/* お知らせスクロール */
+ul.marquee {
+        display: block;
+        margin:0; padding:0;
+        list-style: none;
+        line-height: 1;
+        position: relative;
+        overflow: hidden;
+        /* optional */
+        width: 430px; height: 18px;
+        /* background-color: #f2f2ff;*/
+        /*border: 1px solid #08084d;*/
+}
+ul.marquee li {
+        margin:0;
+        list-style:none;
+        position: absolute;
+        top: -999em; left: 0;
+        display: block;
+        white-space: nowrap;
+        /* optional */
+        /*font: 14px Arial, Helvetica, sans-serif;*/
+        padding: 3px 0px;
+}
+
+/* 過去データ用タイトル */
+p.title_rdl {
+	/*background-image:url('../img/titlebgm.png');
+	background-repeat: no-repeat;*/
+	width:656px;
+	height:20px;
+	font-size: 130%;
+	font-weight: bold;
+	line-height:20px;
+	vertical-align: middle;
+	text-align:left;
+	text-indent:10px;
+	margin: 20px 0px 0px 10px;
+	padding: 0px 0px 0px 0px;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        border-color: #cdcdcd;
+
+/* add 2019/02/12 end */
+
+span.elevenpx { font-size: 66%; }
+
+}
