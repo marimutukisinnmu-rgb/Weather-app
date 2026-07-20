@@ -322,4 +322,19 @@ class Dashboard(tk.Tk):
 
 
 if __name__ == "__main__":
-    Dashboard().mainloop()
+    try:
+        app = Dashboard()
+    except Exception as exc:
+        # --windowed で作ったmacOSアプリでは標準エラーが見えないため、
+        # 起動直後の失敗を白画面のままにしない。
+        error_root = tk.Tk()
+        error_root.withdraw()
+        messagebox.showerror(
+            "起動エラー",
+            f"アプリを起動できませんでした。\n\n{exc}\n\n"
+            "最新版のweather_dashboard.pyで再ビルドしてください。",
+            parent=error_root,
+        )
+        error_root.destroy()
+    else:
+        app.mainloop()
