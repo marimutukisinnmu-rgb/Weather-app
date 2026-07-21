@@ -8,16 +8,22 @@ on:
   # 手動実行
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: wbgt-update
+  cancel-in-progress: true
+
 jobs:
   update:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Create docs folder
         run: mkdir -p docs
@@ -39,19 +45,34 @@ jobs:
           ls -lh docs
           tail -5 docs/top_tooltip_td.js
 
-      - name: Commit if changed
+      - name: Commit and Push
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add docs/top_tooltip_td.js
 
-          if git diff --cached --quiet; then
-            echo "変更なし"
-          else
-            git commit -m "Update WBGT"
-            git push
-          fi
+          # 更新日時が毎回変わる前提なので毎回コミット
+          git commit -m "Update WBGT"
+
+          # pushに失敗したら最新を取り込んで再試行
+          for i in 1 2 3; do
+            echo "=== Push attempt $i ==="
+
+            if git push origin main; then
+              echo "Push成功！"
+              exit 0
+            fi
+
+            echo "Push失敗。最新を取得してリベースします..."
+            git pull --rebase origin main
+
+            sleep 2
+          done
+
+          echo "3回試しましたがPushできませんでした。"
+          exit 1
 
 # 最後に更新日時をコメントとして追記する理由
 # ダウンロード前に日時を書くと、取得開始時刻になってしまう。
