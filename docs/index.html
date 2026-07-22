@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="環境省の暑さ指数と気象庁の予報を表示します。">
+  <title>いまの天気・暑さ指数</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <h1>いまの天気・暑さ指数</h1>
+        <p class="subtitle">環境省のWBGTと気象庁の予報</p>
+      </div>
+      <div class="controls">
+        <form id="search-form" class="search" novalidate>
+          <label for="place-search">地点を検索</label>
+          <input id="place-search" type="search" placeholder="" autocomplete="off">
+          <button type="submit">検索</button>
+        </form>
+        <label class="select-label" for="city">地点名</label>
+        <select id="city" aria-label="地点名"></select>
+        <button id="refresh" type="button">更新</button>
+      </div>
+    </header>
+
+    <section class="cards" aria-live="polite">
+      <article class="card wbgt-card">
+        <h2>暑さ指数（WBGT）</h2>
+        <p id="wbgt-value" class="wbgt-value">--.-</p>
+        <p id="wbgt-level" class="level unknown">不明</p>
+        <p id="wbgt-place" class="note"></p>
+      </article>
+      <article class="card forecast-card">
+        <h2>気象庁の予報</h2>
+        <p id="weather" class="weather">不明</p>
+        <p id="temperature">予想気温　--℃ / --℃</p>
+        <p id="pop">降水確率　-% / -% / -% / -% / -%</p>
+      </article>
+    </section>
+
+    <footer>
+      <p id="source">データを取得していません</p>
+      <p id="status" role="status">準備中…</p>
+    </footer>
+  </main>
+  <dialog id="error-dialog">
+    <p id="error-message">その地名は存在しません。</p>
+    <form method="dialog"><button>閉じる</button></form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>

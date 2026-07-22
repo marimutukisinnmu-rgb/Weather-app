@@ -1,0 +1,32 @@
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Yu Gothic UI", "Hiragino Sans", sans-serif; color: #101828; background: #f4f6f9; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.app { max-width: 1024px; min-height: 100vh; margin: auto; padding: 48px 28px 28px; }
+.header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+h1 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.5rem); letter-spacing: .03em; }
+.subtitle, .note, footer { color: #526071; }
+.subtitle { margin: 8px 0 0; }
+.controls { display: flex; align-items: end; justify-content: end; flex-wrap: wrap; gap: 8px; }
+.search { display: flex; align-items: end; gap: 6px; }
+label { display: block; font-size: .83rem; font-weight: 700; }
+input, select, button { min-height: 38px; border: 1px solid #b9c2d0; border-radius: 6px; background: #fff; font: inherit; }
+input { width: 190px; padding: 0 10px; }
+select { min-width: 108px; padding: 0 8px; }
+button { padding: 0 14px; cursor: pointer; font-weight: 700; }
+button:hover { background: #edf2f8; }
+.cards { display: grid; grid-template-columns: minmax(240px, .8fr) minmax(340px, 1.2fr); gap: 18px; margin: 36px 0 22px; }
+.card { min-height: 290px; padding: 28px; border-radius: 12px; background: #fff; box-shadow: 0 2px 12px #263a5512; }
+h2 { margin: 0; font-size: 1.2rem; }
+.wbgt-value { margin: 42px 0 4px; font-size: 4.5rem; line-height: 1; font-weight: 800; color: #596273; font-variant-numeric: tabular-nums; }
+.level { margin: 14px 0 0; font-size: 1.25rem; font-weight: 800; }
+.level.danger { color: #d92027; }.level.severe { color: #e67617; }.level.warning { color: #a17100; }.level.caution { color: #128398; }.level.safe { color: #286dc1; }
+.weather { min-height: 4.2em; margin: 32px 0 18px; font-size: 1.15rem; line-height: 1.8; }
+.forecast-card p:not(.weather) { font-size: 1.06rem; line-height: 1.8; }
+footer { padding-top: 16px; border-top: 1px solid #c9d0d9; font-size: .9rem; }
+footer p { margin: 7px 0; }
+#status { color: #38485b; }
+dialog { max-width: 330px; border: 0; border-radius: 10px; box-shadow: 0 10px 40px #0004; }
+dialog::backdrop { background: #10182855; }
+dialog form { text-align: right; }
+@media (max-width: 760px) { .app { padding: 28px 16px; }.header { display: block; }.controls { justify-content: start; margin-top: 22px; }.cards { grid-template-columns: 1fr; margin-top: 26px; }.card { min-height: 0; }.wbgt-value { margin-top: 28px; }.weather { min-height: 0; margin-top: 24px; } }
+@media (max-width: 440px) { .search { flex-wrap: wrap; }.search label { width: 100%; } input { width: calc(100vw - 32px); } }
