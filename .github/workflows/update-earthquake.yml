@@ -1,0 +1,64 @@
+name: Update Earthquake Info
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: earthquake-update
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch JMA earthquake feed
+        run: |
+          set -euo pipefail
+          mkdir -p docs/data
+          curl -fL --retry 3 --connect-timeout 15 --max-time 60 \
+            -A "Mozilla/5.0 (GitHub Actions)" \
+            "https://www.jma.go.jp/bosai/quake/data/list.json" \
+            -o docs/data/earthquakes.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('docs/data/earthquakes.json')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          if not isinstance(data, list):
+              raise SystemExit('Unexpected JMA earthquake feed format')
+          print(f'Fetched {len(data)} earthquake records')
+          print(json.dumps(data[:1], ensure_ascii=False, indent=2))
+          PY
+
+      - name: Commit and Push
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/earthquakes.json
+          if git diff --cached --quiet; then
+            echo "No earthquake data change."
+            exit 0
+          fi
+          git commit -m "Update earthquake information"
+          for i in 1 2 3; do
+            echo "=== Push attempt $i ==="
+            if git push origin main; then
+              echo "Push success"
+              exit 0
+            fi
+            git pull --rebase origin main
+            sleep 2
+          done
+          exit 1
